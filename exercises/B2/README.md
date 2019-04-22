@@ -4,7 +4,6 @@
 ## Objective
 The purpose of this exercise is to get you into a bit more details about our offerings of setting up your CI/CD environment in an easy and 
 very intuitive manner. You will use the Jenkins which we have configured and you will see how very easy you can build a pipeline thanks to SAP's offerings.
-
 > Note: Be sure to go through the [preparation](../../prep/README.md) steps before starting this exercise.
 ## Estimated time
 30 minutes
@@ -54,4 +53,4 @@ When the creation has finished you will see your pipeline into the Pipelines das
 ![](../../images/b1_pipeline_dashboard.png)
 
 
-[![](../../images/nav-previous.png) Previous Exercise](../B1/README.md) ｜[![](../../images/nav-home.png) Overview page](../README.md) ｜ [![](../../images/nav-next.png) Next Exercise](../exercises/B3/README.md)
+[![](../../images/nav-previous.png) Previous Exercise](../B1/README.md) ｜[![](../../images/nav-home.png) Overview page](../../README.md) ｜ [![](../../images/nav-next.png) Next Exercise](../exercises/B3/README.md)
