@@ -67,4 +67,4 @@ cx-server.bat start
 
 9. **Remember your username and password. If you have followed the instructions they should be user: admin password: admin. Of course you can write anything you want here just make sure to remember it**
 
-[![](../../images/nav-previous.png) Previous Exercise](../A2/README.md) ｜[![](../../images/nav-home.png) Overview page](../README.md) ｜ [![](../../images/nav-next.png) Next Exercise](../exercises/B2/README.md)
+[![](../../images/nav-previous.png) Previous Exercise](../A2/README.md) ｜[![](../../images/nav-home.png) Overview page](../README.md) ｜ [![](../../images/nav-next.png) Next Exercise](../B2/README.md)
