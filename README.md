@@ -39,8 +39,7 @@ Everything has been already configured for you so that you can focus on the DevO
 # Preparation (Mandatory)
 To finalize the setup we have to execute the following steps befor starting with the exercise:
 
-1. Download and configure the Cx Server Docker Container
-2. Import the projects into your IDE of choice (**TODO** Think whether not to do that in the Lesson A)
+> **Note - DELETE THIS IN THE FINAL VERSION** I currently don't have any prep steps but I leave this as a placeholder as they most probably will appear
 
 Follow the instructions on the [preparation page](prep/README.md) to get all the details. 
 

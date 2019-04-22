@@ -1,4 +1,6 @@
-# B1 - Setting up your Jenkins server
+# Lesson B – Setting up CI/CD pipeline
+# Exercise B2 - Setting up your Jenkins server
+
 ### Objective
 To setup your CI/CD enviornment you will first need to get the proper infrastructure for that. You will first download a docker image which containse the Cx Server. This will provide us with a jenkins server out of the box running on our client image. After that you will configure the Jenkins security setting in order to be able to configure a pipeline during the lessons.
 
