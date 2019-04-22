@@ -66,9 +66,9 @@ In this lesson we will get to know our appliaciton. We will understand how it ca
 * Exercise A2 - [Make small change and test it into your test environment](exercises/A1/README.md)
 
 ## Lesson B – Setting up CI/CD pipeline
-* Exercise B1 - [Setting up jenkins to work with GitHub](exercises/B1/README.md)
-* Exercise B2 - [Creating your first pipeline](exercises/B2/README.md)
-* Exercise B3 - [Configuring blue-green deployment of your application and deploying the application](exercises/B3/README.md)
+* Exercise B1 - [Setting up your Jenkins server](exercises/B1/README.md)
+* Exercise B1 - [Creating your first pipeline](exercises/B2/README.md)
+* Exercise B2 - [Configuring blue-green deployment of your application and deploying the application](exercises/B2/README.md)
 
 ## Lesson C - Observability and Control of your application
 * Exercise C1 - [Setting up availability monitor](exercises/C1/README.md)
