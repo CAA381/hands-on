@@ -25,7 +25,7 @@ The used landscape consists of the following systems:
 > **Note - DELETE THIS IN THE FINAL VERSION** Some of the services below are not yet listed on the diagram. I want first to clear some technical questions before putting them there.
 
 * On the SAP Cloud Platform side we have:
-    * Availability service - this service monitors closely our application and it can understand if some of its components are unavailable. 
+    * Cloud Controller - The Cloud Controller maintains a database with tables for orgs, spaces, services, user roles, and more. Via it we can understand what is the current state of our application (is it running, is it stopped, is it crashed, etc.)
     * Alert Notification - this service is used to defined events(alerts) that can occur with our application (or its dependencies). Once these events occur the Alert Notification will notify us via whatever channel. For the exercise case we are going to use it to define that we want to receive an alert when some of our application's components is unavailable.
     * Automation Pilot - this service is used to automate the reactions to a given alert. For example if you need to restart your applicaiton uppon an availability alert you can define this via Automation Pilot and not bother with manual work.
 * Slack - open channel for receiving an alert. You will also have the opportunity to use your email.
@@ -52,9 +52,17 @@ We have already our application deployed on Cloud Platform, so we are going to:
 2. Test this change into the test environment
 3. Setup a pipeline which supports blue-green deployment into productive environment
 4. Deploy and test the application into the productive environment
-5. Define an availability monitor and alert for the application
-6. Intentiopnally break the application in order to receive an alert about its breakage
-7. Automte the control over that application by using automated actions that react to a given alert
+5. Subscribe for Alert Notification
+6. Define a subscription for and alert which notifies us eveyrtime some of the app's components is in state different than STARTED.
+    > Note: we will refer to these as lifecycle management alerts
+
+7. Intentiopnally break the application in order to receive an alert about its breakage
+8. Explore sources of the applicaiton and see that there's a place where an exception is thrown in that very place also our application sends an alert to Alert Notification that something very specific for it has happened
+    > Note: we will refer to these as custom alerts
+
+9. Define a subscription for an alert which notifies us for this special situation
+10. Intentionally trigger the special situation and get notified for it.
+11. Automte the control over that application by using automated actions that react to a given alert
 
 The actual exercises are grouped into three lessons
 
@@ -70,9 +78,9 @@ In this lesson we will get to know our appliaciton. We will understand how it ca
 * Exercise B2 - [Configuring blue-green deployment of your application and deploying the application](exercises/B2/README.md)
 
 ## Lesson C - Observability and Control of your application
-* Exercise C1 - [Setting up availability monitor](exercises/C1/README.md)
-* Exercise C2 - [Createing a subscription for alert](exercises/C2/README.md)
-* Exercise C3 - [Breaking the applicaiton receive an alert](exercises/C3/README.md)
+* Exercise C1 - [Setting up Alert Notification](exercises/C1/README.md)
+* Exercise C2 - [Createing a subscription for lifecycle management alert and receiving the alert](exercises/C2/README.md)
+* Exercise C3 - [Createing a subscription for custom alert and receiving the alert](exercises/C3/README.md)
 * Exercise C4 - [Automating your reactions to an alert](exercises/C4/README.md)
 
 # Final hints before you start
