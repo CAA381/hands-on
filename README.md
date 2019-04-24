@@ -8,7 +8,7 @@ In this session participants will learn best practices how to operate their Clou
 > **Note - DELETE THIS IN THE FINAL VERSION** Also note that the setup is **per participant** I do not want anything shared between participants since it can get messy. Maybe the only shared thing will be the GitHub repo. Of course they will share an CF org but eveyrone will have a separate space.
 
 The different systems and their relation we use for our scenario are sketched out by the following landscape diagram.
-![System Setup](images/system_setup.png)
+![System Setup](images/system_setup_.png)
 
 The used landscape consists of the following systems:
 > **TODO - DELETE THIS IN THE FINAL VERSION** The application to be used is yet to be clarified however most probably we will use some from the spring sample apps like spring-music or CAP's bookshop java applicaition.
