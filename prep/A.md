@@ -40,4 +40,4 @@ Name your branch whatever you like, for example **teched2019** and click on the 
 ![](../images/a/prep_finalize_branch.png)
 
 
-[![](../images/nav-previous.png) Previous Exercise](../B2/README.md) ｜[![](../images/nav-home.png) Overview page](../../README.md) ｜ [![](../images/nav-next.png) Next Exercise](../exercises/C2/README.md)
+[[![](../images/nav-home.png) Overview page](../../README.md) ｜ [![](../images/nav-next.png) Next Exercise](../../exercises/A1/README.md)
