@@ -8,4 +8,4 @@ In this exercise we will concentrate on our Continious Delivery. Let's imagine t
 * Exercise B2 - [Converting your solution to a Multi-Target Application and test it on SAP Cloud Platform](../../exercises/B2/README.md)
 
 
-[[![](../../images/nav-home.png) Overview page](../../README.md) ｜ [![](../../images/nav-next.png) Start Exercise](../../exercise/B1/README.md)]
+[[![](../../images/nav-home.png) Overview page](../../README.md) ｜ [![](../../images/nav-next.png) Start Exercise](../../exercises/B1/README.md)]
