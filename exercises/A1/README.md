@@ -73,4 +73,4 @@ In order to verify the changes again **Right click on the application > Run > Ru
 The end result should look like this:
 ![](../../images/a/a1_verify_ui.png)
 
-[![](../../images/nav-prepa.png) Preparation](../../preparations/A.md) ｜[![](../../images/nav-home.png) Overview page](../../README.md) ｜ [![](../../images/nav-next.png) Next Exercise](../exercises/A2/README.md)
+[![](../../images/nav-prepa.png) Preparation](../../prep/A.md) ｜[![](../../images/nav-home.png) Overview page](../../README.md) ｜ [![](../../images/nav-next.png) Next Exercise](../exercises/A2/README.md)

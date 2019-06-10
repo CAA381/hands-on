@@ -9,4 +9,4 @@ In that exercise we will put ourselves into the shoes of a DevOps team member. O
 * Exercise A2 - [Converting your solution to a Multi-Target Application and test it on SAP Cloud Platform](../../exercises/A1/README.md)
 
 
-[[![](../../images/nav-home.png) Overview page](../../README.md) ｜ [![](../../images/nav-next.png) Preparation](../../prep/A.md)]
+[![](../../images/nav-home.png) Overview page](../../README.md) ｜ [![](../../images/nav-next.png) Preparation](../../prep/A.md)
