@@ -14,7 +14,8 @@ To setup your CI/CD enviornment you will first need to get the proper infrastruc
  **Note - TO BE DELETED IN THE FINAL VERSION** Also the download process might take way too long, I am wondering if this can be downloaded before hand.
 
 1. Open the following [URL]|(https://github.com/teched-test/cloud-s4-sdk-pipeline-docker) - it contains the docker image with the Cx Server.
-2. On the right corner click ont the green "Clone or Download" button.![](../images/download_cx_server.png)
+2. On the right corner click ont the green "Clone or Download" button.
+![](../../images/b/b1_download_cx_server.png)
 3. Click on the "Downlaod ZIP" button.
 4. After the Downlaod is complete, unzip the Cx Server anywhere on the file system 
 > **Note - TO BE DELETED IN THE FINAL VERSION** - this will be more clear instruction once we have the images.
@@ -38,7 +39,7 @@ cx-server.bat start
 ```
 6. Once the server is started open your preffered web browser and open the URL - https://127.0.0.1/
 7. Note that when you first open the URL you might see the screen below, give it couple of seconds to initialize
-![](../../images/jenkins_ready.png)
+![](../../images/b/b1_jenkins_ready.png)
 
 # 3. Setting up your Jenkins security
 
@@ -46,26 +47,26 @@ cx-server.bat start
 > **Note - TO BE DELETED IN THE FINAL VERSION** - I am wondering whether not to do this by default in the image instead making the participants doing it.
 
 1. Click on the Manage Jenkins link
-![](../../images/manage_jenkins.png) 
+![](../../images/b/b1_manage_jenkins.png) 
 
 2. Now click on the "Setup Security" button.
-![](../../images/setup_security.png)
+![](../../images/b/b1_setup_security.png)
 
 3. Make sure that you have selected the Enable Security checkbox
-![](../../images/enable_security.png)
+![](../../images/b/b1_enable_security.png)
 
 4. Once you have done that make sure that you have configured the Access Control section as shown on the picture
-![](../../images/access_control.png)
+![](../../images/b/b1_access_control.png)
 
 5. Scroll down and click on the "Apply" and then "Save" buttons
-![](../../images/apply.png)
+![](../../images/b/b1_apply.png)
 
 6. Once you do this click on the "Jenkins" header in the upper left corner
 7. Let's now create an user - click on the "Sigun Up" link in the upper right corner
-![](../images/signup.png)
+![](../../images/b/b1_signup.png)
 
 8. Fill the form as shown below and click on "Create Account" button
-![](../images/create_account.png)
+![](../../images/b/b1_create_account.png)
 
 9. **Remember your username and password. If you have followed the instructions they should be user: admin password: admin. Of course you can write anything you want here just make sure to remember it**
 

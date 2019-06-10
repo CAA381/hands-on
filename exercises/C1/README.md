@@ -8,7 +8,7 @@ As a DevOps engineer prio 0 for you is to ensure your site availability. Life Si
 
 The Alert Notification enables you to do the second one of these two options. In order to start with it we should first subscribe for the service, which is the objective of that exercise
 
-### What you will learn during the exercis
+### What you will learn during the exercise
 * You will explore the Cloud Cockpit
 * You will learn how to create spaces in Cloud Foundry's subaccounts
 * You will learn how to subscribe for services in Cloud Foundry environment
@@ -25,38 +25,38 @@ The Alert Notification enables you to do the second one of these two options. In
 1. > **TODO - TO BE DELETED IN THE FINAL VERSION**  Instructions for logging in and opening cloud cockpit. I will take the screenshots and wirite the instructions once we have the P-users ready
 
 2. Let's open our subaccount, simply click on its name.
-![](../../images/c1_1_navigate_to_subaccount.png)
+![](../../images/c/c1_1_navigate_to_subaccount.png)
 
 3. Now let's creata a space - in the spaces tab click on "New Space" button.
-![](../../images/c1_2_create_space.png)
+![](../../images/c/c1_2_create_space.png)
 
 In the pop-up for name of the space enter **[The-provided-P-user]-TechEd2019** and click on the "Save" button. 
 > Note: You can name the space you create however you like, so this is just an example.
 
-![](../../images/c1_3_assign_roles.png)
+![](../../images/c/c1_3_assign_roles.png)
 
 4. After the creation, open the space by going to the Spaces tab and clicking on the name of the space.
-![](../../images/c1_4_open_space.png)
+![](../../images/c/c1_4_open_space.png)
 
 5. Now let's subscribe for the Alert Notification service - in the space go to the "Service Marketplace" tab and click on "alert-notification"
-![](../../images/c1_5_subscribe.png)
+![](../../images/c/c1_5_subscribe.png)
 
 6. In the instances tab of the service click on "New Isntance" button.
-![](../../images/c1_6_create_instance.png)
+![](../../images/c/c1_6_create_instance.png)
 
 7. In the pop-up that appears click on the "Next" button
-![](../../images/c1_7_create_instance_next.png)
+![](../../images/c/c1_7_create_instance_next.png)
 
 8. And next one more time
-![](../../images/c1_8_chose_plan.png)
+![](../../images/c/c1_8_chose_plan.png)
 
 8. And next again
-![](../../images/c1_9_chose_app.png)
+![](../../images/c/c1_9_chose_app.png)
 
 9. Let's name the service isntance you can name it - **2019-teched-an** or whatever you like
-![](../../images/c1_10_name_instance.png)
+![](../../images/c/c1_10_name_instance.png)
 
 10. The last step is to open the Alert Notification, simply click on its name.
-![](../../images/c1_11_open_alert_notification.png)
+![](../../images/c/c1_11_open_alert_notification.png)
 
 [![](../../images/nav-previous.png) Previous Exercise](../B2/README.md) ｜[![](../../images/nav-home.png) Overview page](../../README.md) ｜ [![](../../images/nav-next.png) Next Exercise](../exercises/C2/README.md)

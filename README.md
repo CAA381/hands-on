@@ -46,31 +46,33 @@ Follow the instructions on the [preparation page](prep/README.md) to get all the
 # Exercises
 
 ## Short overview
-Here's a sketch of what we are going to do in the next almost 2 hours
-We have already our application deployed on Cloud Platform, so we are going to:
-1. Introduce a small change into it
-2. Test this change into the test environment
-3. Setup a pipeline which supports blue-green deployment into productive environment
-4. Deploy and test the application into the productive environment
-5. Subscribe for Alert Notification
-6. Define a subscription for and alert which notifies us eveyrtime some of the app's components is in state different than STARTED.
+Here's a sketch of what we are going to do in the next almost 2 hours:
+1. We are going to import an existing application in our WebIDE 
+2. Introduce a small change into it and test it locally in the browser
+3. Convert our application to a Multi-Target Application and deploy it to the cloud
+4. Setup a pipeline which supports blue-green deployment into productive environment
+5. Deploy and test the application into the productive environment
+6. Subscribe for Alert Notification
+7. Define a subscription for and alert which notifies us eveyrtime some of the app's components is in state different than STARTED.
     > Note: we will refer to these as lifecycle management alerts
 
-7. Intentiopnally break the application in order to receive an alert about its breakage
-8. Explore sources of the applicaiton and see that there's a place where an exception is thrown in that very place also our application sends an alert to Alert Notification that something very specific for it has happened
+8. Intentiopnally break the application in order to receive an alert about its breakage
+9. Explore sources of the applicaiton and see that there's a place where an exception is thrown in that very place also our application sends an alert to Alert Notification that something very specific for it has happened
     > Note: we will refer to these as custom alerts
 
-9. Define a subscription for an alert which notifies us for this special situation
-10. Intentionally trigger the special situation and get notified for it.
-11. Automte the control over that application by using automated actions that react to a given alert
+10. Define a subscription for an alert which notifies us for this special situation
+11. Intentionally trigger the special situation and get notified for it.
+12. Automte the control over that application by using automated actions that react to a given alert
 
 The actual exercises are grouped into three lessons
 
 ## Lesson A – Modeling and Test of your application
 In this lesson we will get to know our appliaciton. We will understand how it can be configured. Also we will learn how to make a simple change and test it into our test environment. This lessons has the following exercises:
 
-* Exercise A1 - [Getting started with your application. Explore its sources via an IDE of Choice](exercises/A1/README.md)
-* Exercise A2 - [Make small change and test it into your test environment](exercises/A1/README.md)
+* Preparation - [Import the application from GitHub to SAP Web IDE](exercises/A-Prep/prep.md)
+* Exercise A1 - [Getting started with your application. Explore its sources via SAP Web IDE](exercises/A1/README.md)
+* Exercise A2 - [Make small change and test it into your local test environment](exercises/A1/README.md)
+* Exercise A3 - [Converting your solution to a Multi-Target Application and test it on SAP Cloud Platform](exercises/A1/README.md)
 
 ## Lesson B – Setting up CI/CD pipeline
 * Exercise B1 - [Setting up your Jenkins server](exercises/B1/README.md)
