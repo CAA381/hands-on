@@ -69,7 +69,7 @@ The actual exercises are grouped into three lessons
 ## Lesson A – Modeling and Test of your application
 In this lesson we will get to know our appliaciton. We will understand how it can be configured. Also we will learn how to make a simple change and test it into our test environment. This lessons has the following exercises:
 
-* Preparation - [Import the application from GitHub to SAP Web IDE](exercises/A-Prep/prep.md)
+* Preparation - [Import the application from GitHub to SAP Web IDE](preparations/A/README.md)
 * Exercise A1 - [Getting started with your application. Explore its sources via SAP Web IDE](exercises/A1/README.md)
 * Exercise A2 - [Make small change and test it into your local test environment](exercises/A1/README.md)
 * Exercise A3 - [Converting your solution to a Multi-Target Application and test it on SAP Cloud Platform](exercises/A1/README.md)
