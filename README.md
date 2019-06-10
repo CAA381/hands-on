@@ -72,15 +72,14 @@ In this lesson we will get to know our appliaciton. We will understand how it ca
 * [Overview and Start](overviews/A/README.md)
 
 ## Lesson B – Setting up CI/CD pipeline
-* Exercise B1 - [Setting up your Jenkins server](exercises/B1/README.md)
-* Exercise B1 - [Creating your first pipeline](exercises/B2/README.md)
-* Exercise B2 - [Configuring blue-green deployment of your application and deploying the application](exercises/B2/README.md)
+>***TODO - DELETE THIS IN THE FINAL VERSION** - Benjamin should refine that and also the overview
+During this lesson you will understand how a CI/CD pipelines work and what SAP can offer you in order to make your day-to-day DevOps processes easier.
+* [Overview and Start](overviews/B/README.md)
 
 ## Lesson C - Observability and Control of your application
-* Exercise C1 - [Setting up Alert Notification](exercises/C1/README.md)
-* Exercise C2 - [Createing a subscription for lifecycle management alert and receiving the alert](exercises/C2/README.md)
-* Exercise C3 - [Createing a subscription for custom alert and receiving the alert](exercises/C3/README.md)
-* Exercise C4 - [Automating your reactions to an alert](exercises/C4/README.md)
+In this lesson you will learn how to monitor and control your application during after deployment. This is the phase where different problems happen (availability issues, performance issues, unexpected load and many more). You will explore SAP Cloud Platform's offerings towards all these potential issues that might appear.
+* [Overview and Start](overviews/C/README.md)
+
 
 # Final hints before you start
 
@@ -98,7 +97,7 @@ In this lesson we will get to know our appliaciton. We will understand how it ca
 # Contact
 This content is currently maintained by 
 * [Kiril Gavrailov](mailto:k.gavrailov@sap.com)
-* [Georgi Kirtchev](mailto:georgi.kirtchev@sap.com)
+* [Benjamin Heilbrunn](mailto:benjamin.heilbrunn@sap.com)
 * [Vesselin Mitrov](mailto:vesselin.mitrov@sap.com)
 
 # License
