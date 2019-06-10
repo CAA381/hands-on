@@ -67,9 +67,9 @@ Here's a sketch of what we are going to do in the next almost 2 hours:
 The actual exercises are grouped into three lessons
 
 ## Lesson A – Modeling and Test of your application
-In this lesson we will get to know our appliaciton. We will understand how it can be configured. Also we will learn how to make a simple change and test it into our test environment. This lessons has the following exercises:
+In this lesson we will get to know our appliaciton. We will understand how it can be configured. Also we will learn how to make a simple change and test it into our test environment. Click on the llink below in order to initiate the lesson
 
-* Overview and Start - [Import the application from GitHub to SAP Web IDE](preparations/A/README.md)
+* Overview and Start - [Import the application from GitHub to SAP Web IDE](overviewss/A/README.md)
 
 ## Lesson B – Setting up CI/CD pipeline
 * Exercise B1 - [Setting up your Jenkins server](exercises/B1/README.md)
