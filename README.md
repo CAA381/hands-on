@@ -1,28 +1,28 @@
 # Description
-Welcome to our hands-on session -CAA381 Taking Your DevOps Skills on SAP CloudPlatform to the Next Level. We are part of the Learning Journey - Apply DevOps in a SAP solution landscape. And today we are going to get more insights on how to operate with ease your SAP Cloud Platform application. 
+Welcome to our hands-on session -CAA381 Taking Your DevOps Skills on SAP CloudPlatform to the Next Level. We are part of the Learning Journey - Apply DevOps in an SAP solution landscape. And today we are going to get more insights on how to operate with ease your SAP Cloud Platform application. 
 
 # Used Landscape 
 
-The different systems and their relation we use for our scenario are sketched out by the following landscape diagram.
+The different systems and the relation we use for our scenario are sketched out by the following landscape diagram.
 ![System Setup](images/system_setup_.png)
 
 The used landscape consists of the following systems:
 
-* Every participan will have a dedicated Cloud Foundry space, accessible with the provided username and password from the handouts on your desks.
+* Every participant will have a dedicated Cloud Foundry space, accessible with the provided username and password from the handouts on your desks.
 * Our sample [Timesheet Application](https://github.wdf.sap.corp/MA/teched2019-caa381), which we will deploy into the dedicated space.
-* SAP WebIDE or Visual Studio Code - depending on the choice of the participant those are the development environments that will be used.
-* GitHub - repository where we will keep our application's soruces, the version into that repo will be deployed on the landscape
+* SAP WebIDE or Visual Studio Code - depending on the choice of the participant those are the development environments that you will use.
+* GitHub - repository where we will keep our application's sources, you will deploy this application's version of the landscape
 * Cx Server - Downloaded docker container which consists of
-    * Jenkins with Blue Ocean - with the help of Jenkins we will be able to build a pipeline. For the sake of the time we will keep our pipeline simple.
-    * MTA Deploy Service - de-facto the tool that is used for deployment of MultiTarget applications. We will integrate this one with our pipeline in order to execute our productive deployment
+    * Jenkins with Blue Ocean - with the help of Jenkins we will be able to build a pipeline. For the sake of the time, we will keep our pipeline simple.
+    * MTA Deploy Service - this is the deployer application that our pipeline will use to deploy the application into our Cloud Foundry space.
 
 * On the SAP Cloud Platform side we have:
-    * Cloud Controller - The Cloud Controller maintains a database with tables for orgs, spaces, services, user roles, and more. Via it we can understand what is the current state of our application (is it running, is it stopped, is it crashed, etc.)
-    * Alert Notification - this service is used to defined events(alerts) that can occur with our application (or its dependencies). Once these events occur the Alert Notification will notify us via whatever channel. For the exercise case we are going to use it to define that we want to receive an alert when some of our application's components is unavailable.
+    * Cloud Controller - The Cloud Controller maintains a database with tables for organizations, spaces, services, user roles, and more. Via it, we can understand what the current state of our application is (is it running, is it stopped, is it crashed, etc.)
+    * Alert Notification - this service is used to define events(alerts) that can occur with our application (or its dependencies). Once these events occur, the Alert Notification will notify us via whatever channel. For the exercise case, we are going to use it to define what we want to receive an alert when some of our application's components are unavailable.
    
 * Slack - open channel for receiving an alert. You will also have the opportunity to use your email.
 
-Everything has been already configured for you so that you can focus on the DevOps topic. Nethertheless, here is a summary of the requirements that are needed if you want to set up the same landscape later on your own:
+Everything has been already configured for you so that you can focus on the DevOps topic. Nevertheless, here is a summary of the requirements that are needed if you want to set up the same landscape later on your own:
 
 * **This GitHub Repo will be preserve for your convinience after the TechEd so you can consume the resource anytime**
 
