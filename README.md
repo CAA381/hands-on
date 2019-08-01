@@ -24,9 +24,11 @@ The used landscape consists of the following systems:
 
 Everything has been already configured for you so that you can focus on the DevOps topic. Nevertheless, here is a summary of the requirements that are needed if you want to set up the same landscape later on your own:
 
-* **This GitHub Repo will be preserve for your convinience after the TechEd so you can consume the resource anytime**
-
-> **TODO - DELETE THIS IN THE FINAL VERSION** Provide the list of requirements on a later point before I finalize the handouts.
+* **This GitHub Repo will be preserved for your convenience after the TechEd so you can consume the resource anytime**
+* You can download Cx Server from [here](https://github.com/SAP/cloud-s4-sdk-pipeline-docker/tree/master/s4sdk-jenkins-master/cx-server)
+* You will need to have an [SAP Cloud Platform](https://cloudplatform.sap.com/index.html) account (CF or Neo environment)
+* An active subscription to [Alert Notification](https://cloudplatform.sap.com/capabilities/product-info.SAP-Cloud-Platform-Alert-Notification.df14655e-ee31-45ab-b755-71f869e359c8.html).
+* SAP CAP based application. Learn how to build one [here](https://developers.sap.com/group.cp-apm-full-stack-app.html)
 
 # Preparation (Mandatory)
 To finalize the setup we have to execute the following steps befor starting with the exercise:
@@ -38,59 +40,49 @@ Follow the instructions on the [preparation page](prep/README.md) to get all the
 # Exercises
 
 ## Short overview
-Here's a sketch of what we are going to do in the next almost 2 hours:
-1. We are going to import an existing application in our WebIDE 
-2. Introduce a small change into it and test it locally in the browser
-3. Convert our application to a Multi-Target Application and deploy it to the cloud
-4. Setup a pipeline which supports blue-green deployment into productive environment
-5. Deploy and test the application into the productive environment
-6. Subscribe for Alert Notification
-7. Define a subscription for and alert which notifies us eveyrtime some of the app's components is in state different than STARTED.
+
+1. Set up a deployment pipeline which deploys the sample app into our Cloud Foundry space
+2. Intentionally introduce an error into our deployment process. Explore how easy it is to understand this error. Respectively how easy it is to fix it.
+3. Fix the error situation
+4. Deploy and test the application into your environment
+5. Define a subscription for and alert, which notifies us every time some of the app's components is in a state different than STARTED.
     > Note: we will refer to these as lifecycle management alerts
 
-8. Intentiopnally break the application in order to receive an alert about its breakage
-9. Explore sources of the applicaiton and see that there's a place where an exception is thrown in that very place also our application sends an alert to Alert Notification that something very specific for it has happened
+6. Intentionally break the application to receive an alert about its breakage
+7. Explore sources of the app. Notice that there is a place where something unusual happens. In that very place also our app sends an alert to Alert Notification that something concrete for it has happened
     > Note: we will refer to these as custom alerts
 
-10. Define a subscription for an alert which notifies us for this special situation
-11. Intentionally trigger the special situation and get notified for it.
-12. Automte the control over that application by using automated actions that react to a given alert
+8. Define a subscription for an alert which notifies us for this particular situation
+9. Intentionally trigger the unusual case and get notified for it.
 
 The actual exercises are grouped into three lessons
 
-## Lesson A – Modeling and Test of your application
-In this lesson we will get to know our appliaciton. We will understand how it can be configured. Also we will learn how to make a simple change and test it into our test environment. Click on the llink below in order to initiate the lesson
-
-* [Overview and Start](overviews/A/README.md)
-
-## Lesson B – Setting up CI/CD pipeline
+## Lesson A – Setting up CI/CD pipeline
 >***TODO - DELETE THIS IN THE FINAL VERSION** - Benjamin should refine that and also the overview
-During this lesson you will understand how a CI/CD pipelines work and what SAP can offer you in order to make your day-to-day DevOps processes easier.
+During this lesson, you will understand how a CI/CD pipelines work and what SAP can offer you to make your day-to-day DevOps processes easier.
 * [Overview and Start](overviews/B/README.md)
 
-## Lesson C - Observability and Control of your application
-In this lesson you will learn how to monitor and control your application during after deployment. This is the phase where different problems happen (availability issues, performance issues, unexpected load and many more). You will explore SAP Cloud Platform's offerings towards all these potential issues that might appear.
+## Lesson B - Observability and Control of your application
+In this lesson, you will learn how to observe and control your application after deployment. During this phase, different problems happen (availability issues, performance issues, unexpected load and many more). You will explore SAP Cloud Platform's offerings towards all these potential issues that might appear.
 * [Overview and Start](overviews/C/README.md)
 
 
 # Final hints before you start
 
-* As the 3 lessons don’t depend on each other, you can choose which lessons you want to learn. In 2 hours, you should be able to run 2 of them, 3 if you are really fast. So you can start with one or the other lesson. **Only the preparation steps need to be done at the beginning.**
-
-> **TODO - DELETE THIS IN THE FINAL VERSION** The users and passwords are currently in clatification note I will fill this section later on.
-
-* Multiple systems with different users: As you are working on different systems that use all different user / password combinations you need to be very careful where to use which user. Too many failed login attempts will lock the systems. 
-* Use the provided Student Overview Paper to verify credentials during the hands-on session.
-* Your Teched image will be automatically deleted 5 minutes after the end of the session.
+* As the two lessons don't depend on each other, you can start from wherever you like. In 2 hours, you should be able to run both of them. We recommend executing the lessons consecutively. **Only the preparation steps need to be done at the beginning.**
+* **Use the provided Student Overview Paper to verify credentials during the hands-on session.**
+* Your Teched image will be automatically deleted 5 minutes after the end of the course.
 
 # Handy links
-> **TODO - FILL THIS ON LATER STAGE**
+* [Blog posts with regards to SAP Cloud SDK and Cx Server](https://blogs.sap.com/2017/05/10/first-steps-with-sap-s4hana-cloud-sdk/)
+* [Blog posts with regards to SAP Cloud Platform Alert Notification](https://blogs.sap.com/tag/sap-cloud-platform-alert-notification/)
+* [SAP Cloud Application Programming Model](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/00823f91779d4d42aa29a498e0535cdf.html)
 
 # Contact
 This content is currently maintained by 
-* [Kiril Gavrailov](mailto:k.gavrailov@sap.com)
 * [Benjamin Heilbrunn](mailto:benjamin.heilbrunn@sap.com)
 * [Vesselin Mitrov](mailto:vesselin.mitrov@sap.com)
+* [Kiril Gavrailov](mailto:k.gavrailov@sap.com)
 
 # License
 Copyright (c) 2018 SAP SE or an SAP affiliate company. All rights reserved.
