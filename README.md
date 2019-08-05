@@ -60,11 +60,11 @@ The actual exercises are grouped into three lessons
 ## Lesson A – Setting up CI/CD pipeline
 >***TODO - DELETE THIS IN THE FINAL VERSION** - Benjamin should refine that and also the overview
 During this lesson, you will understand how a CI/CD pipelines work and what SAP can offer you to make your day-to-day DevOps processes easier.
-* [Overview and Start](overviews/B/README.md)
+* [Overview and Start](overviews/A/README.md)
 
 ## Lesson B - Observability and Control of your application
 In this lesson, you will learn how to observe and control your application after deployment. During this phase, different problems happen (availability issues, performance issues, unexpected load and many more). You will explore SAP Cloud Platform's offerings towards all these potential issues that might appear.
-* [Overview and Start](overviews/C/README.md)
+* [Overview and Start](overviews/B/README.md)
 
 
 # Final hints before you start
