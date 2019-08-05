@@ -1,76 +1,73 @@
-# Lesson A - Modeling and Test of your application
-# Exercuse A1 - Make small change and test it into your local test environment
+# Lesson A – Setting up CI/CD pipeline
+# Exercise A2 - Setting up your Jenkins server
 
-## Objective
-You already know abour SAP Clud Application Programming model and you have imported the application into the SAP Web IDE. In that Exercise you will introduce a really small change into he application. The purpose here is not to concetnrate on the coding, but rather to see what is the turnaround of testing such a change. 
+### Objective
+To setup your CI/CD enviornment you will first need to get the proper infrastructure for that. You will first download a docker image which containse the Cx Server. This will provide us with a jenkins server out of the box running on our client image. After that you will configure the Jenkins security setting in order to be able to configure a pipeline during the lessons.
 
-### What you will learn during this exercise
-You will learn how to make changes into SAP Web IDE and test them immidiatelly into the browser.
-
-## Estimated time
+### Estimated Time
 15 minutes
 
-# 1. Let's see how the application looks like
-Before introducing the change let us have a look at the appllication UI itself. How to do that? Simply **Right click on the application > Run > Run As Web Application**
-![](../../images/a/а1_run_as_webapp.png)
+# 1. Downloading Cx Server
 
-The end result should be the Application running 
->Of course not all of the functioanlites of the application will work, since it is wokring only as an UI currently and it is not deployed into the cloud
+> **Note - TO BE DELETED IN THE FINAL VERSION** I am still considering whether making the participants use git on the local image (We have it integrated into both jenkins and web ide). I will give it a day or two more to think.
 
-![](../../images/a/a1_app_ui.png)
+ **Note - TO BE DELETED IN THE FINAL VERSION** Also the download process might take way too long, I am wondering if this can be downloaded before hand.
 
+1. Open the following [URL]|(https://github.com/teched-test/cloud-s4-sdk-pipeline-docker) - it contains the docker image with the Cx Server.
+2. On the right corner click ont the green "Clone or Download" button.
+![](../../images/a/a1_download_cx_server.png)
+3. Click on the "Downlaod ZIP" button.
+4. After the Downlaod is complete, unzip the Cx Server anywhere on the file system 
+> **Note - TO BE DELETED IN THE FINAL VERSION** - this will be more clear instruction once we have the images.
 
+# 2. Running the Docker container
+> **Note - TO BE DELETED IN THE FINAL VERSION** - this will be more clear instruction once we have the images.
 
-# 2. Introduce the change
-What will be the change? As in many hands-ons you have made so far here you will also introduce a small UI change. Because it is easier and we are all sure that it will work :) For that purpose locate the **fiori.html** file into your Web IDE project, as shown on the picture.
-
-![](../../images/a/a1_locate_fiori_html.png)
-
-Let's interoduce the followin change: 
-
-**On line 15** - make the label "Browse Books" to "Browse My Books"
-**On line 23** - make the label "Manage Books" to "Manage My Books"
-**On line 31** - make the label "Manage Orders" to "Manage My Orders"
-
-The code should look like this: 
-
+1. In Windows navigate to Start >> Program Files >> Accessories >> Command Prompt
+2. In the opened terminal navigate to the unzipped folder on the file system, then enter the directory **s4sdk-jenkins-master**
+3. Execute the following command in order to build the docker image. This process will take couple of minutes
+``` 
+docker build -t s4sdk/jenkins-master-image .
 ```
-<script>
-		window["sap-ushell-config"] = {
-			defaultRenderer: "fiori2",
-			applications: {
-				"browse-books": {
-					title: "Browse My Books",
-					description: "... testing FE v42",
-					additionalInformation: "SAPUI5.Component=bookshop",
-					applicationType : "URL",
-					url: "/browse/webapp",
-					navigationMode: "embedded"
-				},
-				"manage-books": {
-					title: "Manage My Books",
-					description: "... testing FE v42",
-					additionalInformation: "SAPUI5.Component=admin",
-					applicationType : "URL",
-					url: "/admin/webapp",
-					navigationMode: "embedded"
-				},
-				"manage-orders": {
-					title: "Manage My Orders",
-					description: "... testing FE v42",
-					additionalInformation: "SAPUI5.Component=orders",
-					applicationType : "URL",
-					url: "/orders/webapp",
-					navigationMode: "embedded"
-				}
-			}
-		};
-	</script>
+4. Afterwards the image is available and a new container can be spawned with following command:
+``` 
+docker run -p 8080:8080 --name teched-jenkins s4sdk/jenkins-master-image
 ```
+5. Once this done, we are ready to start our jenkins system, to do so navgate to the "cx-server" directory and execute the following command:
+``` 
+cx-server.bat start
+```
+6. Once the server is started open your preffered web browser and open the URL - https://127.0.0.1/
+7. Note that when you first open the URL you might see the screen below, give it couple of seconds to initialize
+![](../../images/a/a1_jenkins_ready.png)
 
+# 3. Setting up your Jenkins security
 
-In order to verify the changes again **Right click on the application > Run > Run As Web Application** 
-The end result should look like this:
-![](../../images/a/a1_verify_ui.png)
+> **Note - TO BE DELETED IN THE FINAL VERSION** - this will be more clear instruction once we have the images.
+> **Note - TO BE DELETED IN THE FINAL VERSION** - I am wondering whether not to do this by default in the image instead making the participants doing it.
 
-[![](../../images/nav-prepa.png) Preparation](../../prep/A.md) ｜[![](../../images/nav-home.png) Overview page](../../README.md) ｜ [![](../../images/nav-next.png) Next Exercise](../exercises/A2/README.md)
+1. Click on the Manage Jenkins link
+![](../../images/a/a1_manage_jenkins.png) 
+
+2. Now click on the "Setup Security" button.
+![](../../images/a/a1_setup_security.png)
+
+3. Make sure that you have selected the Enable Security checkbox
+![](../../images/a/a1_enable_security.png)
+
+4. Once you have done that make sure that you have configured the Access Control section as shown on the picture
+![](../../images/a/a1_access_control.png)
+
+5. Scroll down and click on the "Apply" and then "Save" buttons
+![](../../images/a/a1_apply.png)
+
+6. Once you do this click on the "Jenkins" header in the upper left corner
+7. Let's now create an user - click on the "Sigun Up" link in the upper right corner
+![](../../images/a/a1_signup.png)
+
+8. Fill the form as shown below and click on "Create Account" button
+![](../../images/a/a1_create_account.png)
+
+9. **Remember your username and password. If you have followed the instructions they should be user: admin password: admin. Of course you can write anything you want here just make sure to remember it**
+
+[![](../../images/nav-previous.png) Preparation A](../../prep/A.md) ｜[![](../../images/nav-home.png) Overview page](../../README.md) ｜ [![](../../images/nav-next.png) Next Exercise](../A2/README.md)

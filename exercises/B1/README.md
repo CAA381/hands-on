@@ -1,73 +1,62 @@
-# Lesson B – Setting up CI/CD pipeline
-# Exercise B2 - Setting up your Jenkins server
+# Lesson B – Observability and Control of your application
+# Exercise B1 - Setting up availability monitor
 
 ### Objective
-To setup your CI/CD enviornment you will first need to get the proper infrastructure for that. You will first download a docker image which containse the Cx Server. This will provide us with a jenkins server out of the box running on our client image. After that you will configure the Jenkins security setting in order to be able to configure a pipeline during the lessons.
+As a DevOps engineer prio 0 for you is to ensure your site availability. Life Site First. In order to achieve this you should be able to proactively understand about potential issues with your application. A cloud application always can encounter many issues - performance, avaialbility, infrastructures and many more. In order to understand about these you have couple of choices:
+* To proactively watch a bunch of dashboard and watch for occuring issues.
+* To react on a notification that receive via a prferred channel of yours, which will save you a lot of time.
+
+The Alert Notification enables you to do the second one of these two options. In order to start with it we should first subscribe for the service, which is the objective of that exercise
+
+### What you will learn during the exercise
+* You will explore the Cloud Cockpit
+* You will learn how to create spaces in Cloud Foundry's subaccounts
+* You will learn how to subscribe for services in Cloud Foundry environment
 
 ### Estimated Time
 15 minutes
 
-# 1. Downloading Cx Server
+# 1. Introduction to SAP Cloud Platform Alert Notification
+> **Note - TO BE DELETED IN THE FINAL VERSION**  More information here is yet to come. Purpose and explanation
 
-> **Note - TO BE DELETED IN THE FINAL VERSION** I am still considering whether making the participants use git on the local image (We have it integrated into both jenkins and web ide). I will give it a day or two more to think.
+# 2. Subscribing for the service
+> **TODO - TO BE DELETED IN THE FINAL VERSION**  Some of the screenshots need to be retaken. We will do this somewhere in June
 
- **Note - TO BE DELETED IN THE FINAL VERSION** Also the download process might take way too long, I am wondering if this can be downloaded before hand.
+1. > **TODO - TO BE DELETED IN THE FINAL VERSION**  Instructions for logging in and opening cloud cockpit. I will take the screenshots and wirite the instructions once we have the P-users ready
 
-1. Open the following [URL]|(https://github.com/teched-test/cloud-s4-sdk-pipeline-docker) - it contains the docker image with the Cx Server.
-2. On the right corner click ont the green "Clone or Download" button.
-![](../../images/b/b1_download_cx_server.png)
-3. Click on the "Downlaod ZIP" button.
-4. After the Downlaod is complete, unzip the Cx Server anywhere on the file system 
-> **Note - TO BE DELETED IN THE FINAL VERSION** - this will be more clear instruction once we have the images.
+2. Let's open our subaccount, simply click on its name.
+![](../../images/b/b1_1_navigate_to_subaccount.png)
 
-# 2. Running the Docker container
-> **Note - TO BE DELETED IN THE FINAL VERSION** - this will be more clear instruction once we have the images.
+3. Now let's creata a space - in the spaces tab click on "New Space" button.
+![](../../images/b/b1_2_create_space.png)
 
-1. In Windows navigate to Start >> Program Files >> Accessories >> Command Prompt
-2. In the opened terminal navigate to the unzipped folder on the file system, then enter the directory **s4sdk-jenkins-master**
-3. Execute the following command in order to build the docker image. This process will take couple of minutes
-``` 
-docker build -t s4sdk/jenkins-master-image .
-```
-4. Afterwards the image is available and a new container can be spawned with following command:
-``` 
-docker run -p 8080:8080 --name teched-jenkins s4sdk/jenkins-master-image
-```
-5. Once this done, we are ready to start our jenkins system, to do so navgate to the "cx-server" directory and execute the following command:
-``` 
-cx-server.bat start
-```
-6. Once the server is started open your preffered web browser and open the URL - https://127.0.0.1/
-7. Note that when you first open the URL you might see the screen below, give it couple of seconds to initialize
-![](../../images/b/b1_jenkins_ready.png)
+In the pop-up for name of the space enter **[The-provided-P-user]-TechEd2019** and click on the "Save" button. 
+> Note: You can name the space you create however you like, so this is just an example.
 
-# 3. Setting up your Jenkins security
+![](../../images/b/b1_3_assign_roles.png)
 
-> **Note - TO BE DELETED IN THE FINAL VERSION** - this will be more clear instruction once we have the images.
-> **Note - TO BE DELETED IN THE FINAL VERSION** - I am wondering whether not to do this by default in the image instead making the participants doing it.
+4. After the creation, open the space by going to the Spaces tab and clicking on the name of the space.
+![](../../images/b/b1_4_open_space.png)
 
-1. Click on the Manage Jenkins link
-![](../../images/b/b1_manage_jenkins.png) 
+5. Now let's subscribe for the Alert Notification service - in the space go to the "Service Marketplace" tab and click on "alert-notification"
+![](../../images/b/b1_5_subscribe.png)
 
-2. Now click on the "Setup Security" button.
-![](../../images/b/b1_setup_security.png)
+6. In the instances tab of the service click on "New Isntance" button.
+![](../../images/b/b1_6_create_instance.png)
 
-3. Make sure that you have selected the Enable Security checkbox
-![](../../images/b/b1_enable_security.png)
+7. In the pop-up that appears click on the "Next" button
+![](../../images/b/b1_7_create_instance_next.png)
 
-4. Once you have done that make sure that you have configured the Access Control section as shown on the picture
-![](../../images/b/b1_access_control.png)
+8. And next one more time
+![](../../images/b/b1_8_chose_plan.png)
 
-5. Scroll down and click on the "Apply" and then "Save" buttons
-![](../../images/b/b1_apply.png)
+8. And next again
+![](../../images/b/b1_9_chose_app.png)
 
-6. Once you do this click on the "Jenkins" header in the upper left corner
-7. Let's now create an user - click on the "Sigun Up" link in the upper right corner
-![](../../images/b/b1_signup.png)
+9. Let's name the service isntance you can name it - **2019-teched-an** or whatever you like
+![](../../images/b/b1_10_name_instance.png)
 
-8. Fill the form as shown below and click on "Create Account" button
-![](../../images/b/b1_create_account.png)
+10. The last step is to open the Alert Notification, simply click on its name.
+![](../../images/b/b1_11_open_alert_notification.png)
 
-9. **Remember your username and password. If you have followed the instructions they should be user: admin password: admin. Of course you can write anything you want here just make sure to remember it**
-
-[![](../../images/nav-previous.png) Previous Exercise](../A2/README.md) ｜[![](../../images/nav-home.png) Overview page](../../README.md) ｜ [![](../../images/nav-next.png) Next Exercise](../B2/README.md)
+[![](../../images/nav-previous.png) Previous Exercise](../B2/README.md) ｜[![](../../images/nav-home.png) Overview page](../../README.md) ｜ [![](../../images/nav-next.png) Next Exercise](../exercises/C2/README.md)
