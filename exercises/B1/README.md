@@ -1,62 +1,50 @@
 # Lesson B – Observability and Control of your application
-# Exercise B1 - Setting up availability monitor
+# Exercise B1 - Configure Alerts for App State Changes
 
-### Objective
-As a DevOps engineer prio 0 for you is to ensure your site availability. Life Site First. In order to achieve this you should be able to proactively understand about potential issues with your application. A cloud application always can encounter many issues - performance, avaialbility, infrastructures and many more. In order to understand about these you have couple of choices:
-* To proactively watch a bunch of dashboard and watch for occuring issues.
-* To react on a notification that receive via a prferred channel of yours, which will save you a lot of time.
+## Objective
+As you can notice from the diagrams, our solution consists of multiple components. It has a front end module, a backend module and a database. One of the most common situations that might happen to us is the crash (or stop) of some of those components. Usually, as  DevOps engineers, we would like to understand about such situations, since this stoppage might be unplanned and we need to react with actions like - restarting the application.
 
-The Alert Notification enables you to do the second one of these two options. In order to start with it we should first subscribe for the service, which is the objective of that exercise
+Cloud Controller interacts with applications and allows operators to do actions such as staging applications, starting or stopping applications, collecting health information.
+
+Alert Notification is well integrated with Cloud Controller and it understands for every given event that happens with your application.
+
 
 ### What you will learn during the exercise
-* You will explore the Cloud Cockpit
-* You will learn how to create spaces in Cloud Foundry's subaccounts
-* You will learn how to subscribe for services in Cloud Foundry environment
+* You will explore the Cloud Cockpit.
+* You will learn how to configure alerts for app state changes.
+* You will explore the different states of a cloud application.
+* You will learn how to receive the defined alerts via Slack and/or email.
 
 ### Estimated Time
-15 minutes
+25 minutes
 
-# 1. Introduction to SAP Cloud Platform Alert Notification
-> **Note - TO BE DELETED IN THE FINAL VERSION**  More information here is yet to come. Purpose and explanation
+## Exercise Steps
 
-# 2. Subscribing for the service
-> **TODO - TO BE DELETED IN THE FINAL VERSION**  Some of the screenshots need to be retaken. We will do this somewhere in June
+This exercise consists of couple of steps.
+![](../../images/b/b1_1_overview.png)
 
-1. > **TODO - TO BE DELETED IN THE FINAL VERSION**  Instructions for logging in and opening cloud cockpit. I will take the screenshots and wirite the instructions once we have the P-users ready
+1. Subscribe for the alerts coming from Cloud Controller
+2. Configure our output channels - like Slack and email.
+3. Stop our application and receive the alert.
 
-2. Let's open our subaccount, simply click on its name.
-![](../../images/b/b1_1_navigate_to_subaccount.png)
+## Preparation
 
-3. Now let's creata a space - in the spaces tab click on "New Space" button.
-![](../../images/b/b1_2_create_space.png)
+**You should have your application deployed from the previous Lesson. If you do not have it in your Cloud Platform space, please notify one of the sessions lectors and they will provide it for you.**
 
-In the pop-up for name of the space enter **[The-provided-P-user]-TechEd2019** and click on the "Save" button. 
-> Note: You can name the space you create however you like, so this is just an example.
+## 1. Configure Alert Notification
 
-![](../../images/b/b1_3_assign_roles.png)
+1. Logon to [Cloud Cockpit](https://account.hana.ondemand.com/cockpit). Use the user and password provided in the hand-out papers on your desk. In the Global Accounts section select **TechEd2019**
+![](../../images/b/b1_1_ga_home.png)
 
-4. After the creation, open the space by going to the Spaces tab and clicking on the name of the space.
-![](../../images/b/b1_4_open_space.png)
+2. In the Subacount section select this session's subaccount **CAA381cf**
+![](../../images/b/b1_2_subbaccount.png)
 
-5. Now let's subscribe for the Alert Notification service - in the space go to the "Service Marketplace" tab and click on "alert-notification"
-![](../../images/b/b1_5_subscribe.png)
 
-6. In the instances tab of the service click on "New Isntance" button.
-![](../../images/b/b1_6_create_instance.png)
+3. Navigate to the Spaces section and click on your space. **The space name is the same as your username.**
+![](../../images/b/b1_4_click_on_space.png)
 
-7. In the pop-up that appears click on the "Next" button
-![](../../images/b/b1_7_create_instance_next.png)
+4. Drop down the **Services** section and click on Service Instances. Click on the **alert-notifiction-instance<x>**
+![](../../images/b/b1_7_open_ans.png)
 
-8. And next one more time
-![](../../images/b/b1_8_chose_plan.png)
-
-8. And next again
-![](../../images/b/b1_9_chose_app.png)
-
-9. Let's name the service isntance you can name it - **2019-teched-an** or whatever you like
-![](../../images/b/b1_10_name_instance.png)
-
-10. The last step is to open the Alert Notification, simply click on its name.
-![](../../images/b/b1_11_open_alert_notification.png)
 
 [![](../../images/nav-previous.png) Previous Exercise](../B2/README.md) ｜[![](../../images/nav-home.png) Overview page](../../README.md) ｜ [![](../../images/nav-next.png) Next Exercise](../exercises/C2/README.md)
