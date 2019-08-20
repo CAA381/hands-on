@@ -11,12 +11,14 @@ Alert Notification is an SAP Cloud Platform based service which provides you wit
 ![](../../images/b/b1_overview.png)
 
 
-# What you will learn
+## Estimated Time: 60 minutes
+
+## What you will learn
  - What is SAP Cloud Platform Alert Notification and how to use it
  - Best practices for alert managment of your cloud application
  - How to consume alerts via different channels like mail and Slack.
 
- # Exercise Description 
+## Exercise Description 
  - We are going to define an alert which notifies us every time the state of our application changes. For example, when it goes from start to stop or whenever its runtime crashes. We are going to receive a Slack message about those changes.
  - We are going to explore the code of our application and learn how we can make it post the so-called custom alerts. The application itself produces those alerts and one can use them for very application-specific situations. For example, if we have a specific exceptional situation in the application and we want to understand about it, this is going to happen with custom alerts.
  - Lastly, we are going to subscribe ourselves for such kind of custom alert and receive it via Slack or mail
