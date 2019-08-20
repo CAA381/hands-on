@@ -84,7 +84,7 @@ This exercise consists of couple of steps.
 12. Review the final summary and click **Close**
 ![](../../images/b/b1_20_summary.png)
 
-## 1. Stop your application and Receive alerts
+## 2. Stop your application and Receive alerts
 
 Now, once we are ready with our configuration all that is left to see how it works. For that purpose execute the following steps:
 1. Open Slack by clicking here. Authenitcate with the provided email and password on your hands-on sheets.
