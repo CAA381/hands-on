@@ -68,7 +68,7 @@ This exercise consists of couple of steps.
    2. click Next
    ![](../../images/b/b1_17_select_slack.png)
 
-10. Finish Slack Setup. **Open new tab in your browser and open [this url](https://docs.google.com/document/d/1EqStAAieUaFdvSG-kBsApXZGSpeefsaEBVYNNfAa4VQ/edit) and copy the link provided in it.** Back to your Cloud Cockpit.
+10. **Open new tab in your browser and open [this url](https://docs.google.com/document/d/1EqStAAieUaFdvSG-kBsApXZGSpeefsaEBVYNNfAa4VQ/edit) and copy the link provided in it.** Back to your Cloud Cockpit.
       1. In **URL Address** paste the copied URL
       2. In the name field type **PostToMySlackChannel**
       3. In Labels type **AppStates** and click tab or enter
