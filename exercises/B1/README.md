@@ -64,7 +64,6 @@ This exercise consists of couple of steps.
 ![](../../images/b/b1_16_create_action.png)
 
 9. In the next screen select **Slack**. Slack is an cloud-based set of proprietary team collaboration software tools and online services. With Slack you can manager different channels of communication including automatic messaging.
-> **Note:** Slack is divided into channels, where you can receve your alerts. In order to integrate Alert Notification with Slack, one would need a [webhook](https://en.wikipedia.org/wiki/Webhook). In order not to bother you with Slack configurations we have pre-configured those webhooks for you. However, if you want to learn more how to configure Slack, simply click [here](https://help.sap.com/viewer/5967a369d4b74f7a9c2b91f5df8e6ab6/Cloud/en-US/88a4774f9d3f43259b4dc9e7e7729829.html?q=slack)
    1. Click on the Slack radio button
    2. click Next
    ![](../../images/b/b1_17_select_slack.png)
@@ -76,5 +75,7 @@ This exercise consists of couple of steps.
    4. Make sure that State is ON
    5. Click on Create button
 ![](../../images/b/b1_18_configure_web_hook.png)
+
+> **Note:** Slack is divided into channels, where you can receve your alerts. In order to integrate Alert Notification with Slack, one would need a [webhook](https://en.wikipedia.org/wiki/Webhook). In order not to bother you with Slack configurations we have pre-configured those webhooks for you. However, if you want to learn more how to configure Slack, simply click [here](https://help.sap.com/viewer/5967a369d4b74f7a9c2b91f5df8e6ab6/Cloud/en-US/88a4774f9d3f43259b4dc9e7e7729829.html?q=slack)
 
 [![](../../images/nav-previous.png) Previous Exercise](../B2/README.md) ｜[![](../../images/nav-home.png) Overview page](../../README.md) ｜ [![](../../images/nav-next.png) Next Exercise](../exercises/C2/README.md)
