@@ -94,7 +94,7 @@ Now, once we are ready with our configuration all that is left to see how it wor
 ![](../../images/b/b1_29_select_app.png)
 4. Click the Stop button of your application
 ![](../../images/b/b1_30_stop_app.png)
-5. Open your (Slack channel)[https://caa381.slack.com]. Authenticate with the provided email and password on the paper on your desk.
+5. Open your (Shttps://caa381.slack.com)[Slack Channel]. Authenticate with the provided email and password on the paper on your desk.
 ![](../../images/b/b1_31_open_slack.png)
 5. On the left-hand side you will see the Slack Channels. Click on # caa381-2019
 6. In a second you should see the alert
