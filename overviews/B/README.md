@@ -31,4 +31,4 @@ Alert Notification is an SAP Cloud Platform based service which provides you wit
 
 
 
-[[![](../../images/nav-home.png) Overview page](../../README.md) ｜ [![](../../images/nav-next.png) Start Exercise](../../exercise/B1/README.md)]
+[[![](../../images/nav-home.png) Overview page](../../README.md) ｜ [![](../../images/nav-next.png) Start Exercise](../../exercises/B1/README.md)]
