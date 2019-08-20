@@ -102,4 +102,4 @@ Now, once we are ready with our configuration all that is left to see how it wor
 
 
 
-[![](../../images/nav-previous.png) Previous Exercise](../A2/README.md) ｜[![](../../images/nav-home.png) Overview page](../../README.md) ｜ [![](../../images/nav-next.png) Next Exercise](../exercises/B2/README.md)
+[![](../../images/nav-previous.png) Previous Exercise](../A2/README.md) ｜[![](../../images/nav-home.png) Overview page](../../README.md) ｜ [![](../../images/nav-next.png) Next Exercise](../B2/README.md)
