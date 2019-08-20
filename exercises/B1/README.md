@@ -84,6 +84,22 @@ This exercise consists of couple of steps.
 12. Review the final summary and click **Close**
 ![](../../images/b/b1_20_summary.png)
 
+## 1. Stop your application and Receive alerts
+
+Now, once we are ready with our configuration all that is left to see how it works. For that purpose execute the following steps:
+1. Open Slack by clicking here. Authenitcate with the provided email and password on your hands-on sheets.
+2. In the Cloud Cockpit click on your space name and then select the Applications section
+![](../../images/b/b1_28_open_apps.png)
+3. Select your running application
+![](../../images/b/b1_29_select_app.png)
+4. Click the Stop button of your application
+![](../../images/b/b1_30_stop_app.png)
+5. Open your (Slack channel)[https://caa381.slack.com]. Authenticate with the provided email and password on the paper on your desk.
+![](../../images/b/b1_31_open_slack.png)
+5. On the left-hand side you will see the Slack Channels. Click on # caa381-2019
+6. In a second you should see the alert
+![](../../images/b/b1_31_message.png)
+
 
 
 [![](../../images/nav-previous.png) Previous Exercise](../B2/README.md) ｜[![](../../images/nav-home.png) Overview page](../../README.md) ｜ [![](../../images/nav-next.png) Next Exercise](../exercises/C2/README.md)
