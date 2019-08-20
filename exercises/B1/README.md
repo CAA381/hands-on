@@ -69,11 +69,11 @@ This exercise consists of couple of steps.
    ![](../../images/b/b1_17_select_slack.png)
 
 10. Finish Slack Setup. Open new tab in your browser and open [this url](https://docs.google.com/document/d/1EqStAAieUaFdvSG-kBsApXZGSpeefsaEBVYNNfAa4VQ/edit) and copy the link provided in it. Back to your Cloud Cockpit.
-   1. In URL Address paste the copied URL
-   2. In the name field type PostToMySlackChannel
-   3. On Labels type AppStates and click tab or enter
-   4. Make sure that State is ON
-   5. Click on Create button
+      1. In **URL Address** paste the copied URL
+      2. In the name field type **PostToMySlackChannel**
+      3. In Labels type **AppStates** and click tab or enter
+      4. Make sure that State is **ON**
+      5. Click on **Create** button
 ![](../../images/b/b1_18_configure_web_hook.png)
 
 > **Note:** Slack is divided into channels, where you can receve your alerts. In order to integrate Alert Notification with Slack, one would need a [webhook](https://en.wikipedia.org/wiki/Webhook). In order not to bother you with Slack configurations we have pre-configured those webhooks for you. However, if you want to learn more how to configure Slack, simply click [here](https://help.sap.com/viewer/5967a369d4b74f7a9c2b91f5df8e6ab6/Cloud/en-US/88a4774f9d3f43259b4dc9e7e7729829.html?q=slack)
