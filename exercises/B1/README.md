@@ -78,4 +78,12 @@ This exercise consists of couple of steps.
 
 > **Note:** Slack is divided into channels, where you can receve your alerts. In order to integrate Alert Notification with Slack, one would need a [webhook](https://en.wikipedia.org/wiki/Webhook). In order not to bother you with Slack configurations we have pre-configured those webhooks for you. However, if you want to learn more how to configure Slack, simply click [here](https://help.sap.com/viewer/5967a369d4b74f7a9c2b91f5df8e6ab6/Cloud/en-US/88a4774f9d3f43259b4dc9e7e7729829.html?q=slack)
 
+11. On the next screen review and click **Assign**. Note that this is a **demo account**, however in productive enrionment you will have to make opt-in from Slack and confirm from within Slack
+![](../../images/b/b1_19_assign_action.png)
+
+12. Review the final summary and click **Close**
+![](../../images/b/b1_20_summary.png)
+
+
+
 [![](../../images/nav-previous.png) Previous Exercise](../B2/README.md) ｜[![](../../images/nav-home.png) Overview page](../../README.md) ｜ [![](../../images/nav-next.png) Next Exercise](../exercises/C2/README.md)
