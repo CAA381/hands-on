@@ -1,41 +1,54 @@
 # Description
-Welcome to our hands-on session -CAA381 Taking Your DevOps Skills on SAP CloudPlatform to the Next Level. We are part of the Learning Journey - Apply DevOps in an SAP solution landscape. And today we are going to get more insights on how to operate with ease your SAP Cloud Platform application. 
+Welcome to our hands-on session *CAA381 Taking Your DevOps Skills on SAP CloudPlatform to the Next Level* which belongs to the learning journey *Apply DevOps in an SAP solution landscape*. In the next two hours, you will learn and practice how SAP tools help you to build, deliver, and operate high-quality cloud applications that will delight your customers ...and your development team.
 
 # Used Landscape 
 
-The different systems and the relation we use for our scenario are sketched out by the following landscape diagram.
+During this session, we will interact with various tools and systems. The following sketch shows an overview of the flow of our session.
 ![System Setup](images/system_setup_.png)
 
 The used landscape consists of the following systems:
 
-* Every participant will have a dedicated Cloud Foundry space, accessible with the provided username and password from the handouts on your desks.
-* Our sample [Timesheet Application](https://github.wdf.sap.corp/MA/teched2019-caa381), which we will deploy into the dedicated space.
-* SAP WebIDE or Visual Studio Code - depending on the choice of the participant those are the development environments that you will use.
-* GitHub - repository where we will keep our application's sources, you will deploy this application's version of the landscape
-* Cx Server - Downloaded docker container which consists of
-    * Jenkins with Blue Ocean - with the help of Jenkins we will be able to build a pipeline. For the sake of the time, we will keep our pipeline simple.
-    * MTA Deploy Service - this is the deployer application that our pipeline will use to deploy the application into our Cloud Foundry space.
-
-* On the SAP Cloud Platform side we have:
-    * Cloud Controller - The Cloud Controller maintains a database with tables for organizations, spaces, services, user roles, and more. Via it, we can understand what the current state of our application is (is it running, is it stopped, is it crashed, etc.)
-    * Alert Notification - this service is used to define events(alerts) that can occur with our application (or its dependencies). Once these events occur, the Alert Notification will notify us via whatever channel. For the exercise case, we are going to use it to define what we want to receive an alert when some of our application's components are unavailable.
+* **[Timesheet Application](http://cloudl000024.wdf.sap.corp:8080/teched/caa381.git)**\
+Each participant will deploy an own instance of this app to SAP Cloud Platform. The application implements a typical SAP Cloud Platform scenario: It realizes a business process for creating and approving timesheet entries. The project is based on the SAP Cloud Application Programming Model. Furthermore, it uses the convinient APIs of the SAP Cloud SDK to retrieve employee data from SAP SuccessFactors and to read/write approved timesheet entries to S/4HANA. 
+* **Visual Studio Code**\
+We will work with Visual Studio Code as IDE to edit the code of the Timesheet Application.
+* **GitLab SCM**\
+For central source code management, we will use GitLab. We use a shared source code repository as starting point. In this repository, each participant will create his own branch to isolate source code changes from other participants.
+* **Project Piper Cx Server**\
+Project Piper provides tools for the efficient implementation of Continuous Delivery in the SAP ecosystem. We will use the Piper Cx Server to create an own local Continuous Delivery server instance out of the box. In this pre-configured environemnt, we will then execute the SAP Cloud SDK pipeline to run the build, tests, quality checks, and deployment of our Timesheet Application.
+* **SAP Cloud Platform Cloud Foundry Space**\
+Every participant will have a dedicated Cloud Foundry space, accessible with the provided username and password from the handouts on your desks. Furthermore, we will use the following services to observe and operate our application:
+   * The Cloud Controller maintaining a database with tables for organizations, spaces, services, user roles, and more. Via it, we can understand what the current state of our application is (is it running, is it stopped, is it crashed, etc.)
+   * The Alert Notification Service which is used to define events (alerts) that can occur with our application (or its dependencies). Once these events occur, the Alert Notification will notify us via whatever channel. For the exercise case, we are going to use it to define what we want to receive an alert when some of our application's components are unavailable.
    
-* Slack - open channel for receiving an alert. You will also have the opportunity to use your email.
+* **Slack**\
+Finally, we will use Slack for receiving alerts. You will also have the opportunity to use your email address.
 
 Everything has been already configured for you so that you can focus on the DevOps topic. Nevertheless, here is a summary of the requirements that are needed if you want to set up the same landscape later on your own:
 
 * **This GitHub Repo will be preserved for your convenience after the TechEd so you can consume the resource anytime**
-* You can download Cx Server from [here](https://github.com/SAP/cloud-s4-sdk-pipeline-docker/tree/master/s4sdk-jenkins-master/cx-server)
+* To get started with Piper and the SAP Cloud SDK Continuous Delivery Toolkit, check out [this tutorial](https://blogs.sap.com/2017/09/20/continuous-integration-and-delivery/).
 * You will need to have an [SAP Cloud Platform](https://cloudplatform.sap.com/index.html) account (CF or Neo environment)
 * An active subscription to [Alert Notification](https://cloudplatform.sap.com/capabilities/product-info.SAP-Cloud-Platform-Alert-Notification.df14655e-ee31-45ab-b755-71f869e359c8.html).
 * SAP CAP based application. Learn how to build one [here](https://developers.sap.com/group.cp-apm-full-stack-app.html)
 
 # Preparation (Mandatory)
-To finalize the setup we have to execute the following steps befor starting with the exercise:
+Before starting any concrete activities, please make sure that you checked out the latest version of our sources. Please navigate to `D:\Files\Session\CAA381\caa381`, right click in the folder, and open a Git Bash window.
+ 
+TODO Add picture
 
-> **Note - DELETE THIS IN THE FINAL VERSION** I currently don't have any prep steps but I leave this as a placeholder as they most probably will appear
+Then execute `git pull` to get the newest version of our example. The output should look familar to the following screenshot.
 
-Follow the instructions on the [preparation page](prep/README.md) to get all the details. 
+TODO Add picture
+
+Now, let's create our personal branch for our source code changes. For this, execute `git checkout -b participantId` (replace participantId with your id) in the git bash window.
+
+TODO Can this be solved easier in VS code?
+TODO Add picture
+
+Finally, we need to make sure that our source code is deployed to our individual Cloud Foundry space. Please replace the placeholder `participantId` in the files `pipeline_config.yml` and `mta.yaml` with your personal participant identifier which was handed out on paper.
+
+TODO git commit + push (VS code?)
 
 # Exercises
 
@@ -57,9 +70,14 @@ Follow the instructions on the [preparation page](prep/README.md) to get all the
 
 The actual exercises are grouped into three lessons
 
-## Lesson A – Setting up CI/CD pipeline
->***TODO - DELETE THIS IN THE FINAL VERSION** - Benjamin should refine that and also the overview
-During this lesson, you will understand how a CI/CD pipelines work and what SAP can offer you to make your day-to-day DevOps processes easier.
+## Lesson A – Setup Continuous Delivery for your application
+In lesson A, you will bring your application source code to life by deploying it to SAP Cloud Platform. You might be familar with complex and slow release cycles in traditional software development. In this lesson, you will learn how you can deliver application changes to production within just a few minutes and without risking major regressions for your customers. In particular, we will run through the following streamlined steps:
+
+* Setting up a local pre-configured Continuous Delivery server
+* Creating a build job for delivering our project with the SAP Cloud SDK Continuous Delivery pipeline
+* Configuring the pipeline behavior for our project
+* Analyzing, and fixing a quality issue that the pipeline discovered in our code
+* Running the pipeline again, resulting in a successful deployment of our application to SAP Cloud Platform
 
 ![](images/nav-next.png) [Overview and Start](overviews/A/README.md)
 
