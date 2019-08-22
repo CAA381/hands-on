@@ -70,7 +70,7 @@ TODO git commit + push (VS code?)
 
 The actual exercises are grouped into three lessons
 
-## Lesson A – Setup Continuous Delivery for your application
+## Lesson A – Seting up Continuous Delivery for the Timesheet Application
 In lesson A, you will bring your application source code to life by deploying it to SAP Cloud Platform. You might be familar with complex and slow release cycles in traditional software development. In this lesson, you will learn how you can deliver application changes to production within just a few minutes and without risking major regressions for your customers. In particular, we will run through the following streamlined steps:
 
 * Setting up a local pre-configured Continuous Delivery server
