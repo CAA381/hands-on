@@ -35,7 +35,7 @@ Everything has been already configured for you so that you can focus on the DevO
 # Preparation (Mandatory)
 
 ## Start IntelliJ IDE
-Before starting any concrete activities, please make sure that you checked out the latest version of our sources. Please navigate to `D:\Files\Session\CAA381` and click on the IntelliJ shortcut.
+Before we get started with real work, we need to prepare our work environment. In this session, we will use IntelliJ as our IDE. To start IntelliJ, please navigate to `D:\Files\Session\CAA381` and click on the IntelliJ shortcut.
 
 ![](images/a/start-intellij.png)
 
