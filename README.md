@@ -10,8 +10,8 @@ The used landscape consists of the following systems:
 
 * **[Timesheet Application](http://cloudl000024.wdf.sap.corp:8080/teched/caa381.git)**\
 Each participant will deploy an own instance of this app to SAP Cloud Platform. The application implements a typical SAP Cloud Platform scenario: It realizes a business process for creating and approving timesheet entries. The project is based on the SAP Cloud Application Programming Model. Furthermore, it uses the convinient APIs of the SAP Cloud SDK to retrieve employee data from SAP SuccessFactors and to read/write approved timesheet entries to S/4HANA. 
-* **Visual Studio Code**\
-We will work with Visual Studio Code as IDE to edit the code of the Timesheet Application.
+* **IntelliJ IDEA**\
+We will work with IntelliJ as IDE to edit and push the code of the Timesheet Application.
 * **GitLab SCM**\
 For central source code management, we will use GitLab. We use a shared source code repository as starting point. In this repository, each participant will create his own branch to isolate source code changes from other participants.
 * **Project Piper Cx Server**\
@@ -33,22 +33,44 @@ Everything has been already configured for you so that you can focus on the DevO
 * SAP CAP based application. Learn how to build one [here](https://developers.sap.com/group.cp-apm-full-stack-app.html)
 
 # Preparation (Mandatory)
-Before starting any concrete activities, please make sure that you checked out the latest version of our sources. Please navigate to `D:\Files\Session\CAA381\caa381`, right click in the folder, and open a Git Bash window.
- 
-TODO Add picture
 
-Then execute `git pull` to get the newest version of our example. The output should look familar to the following screenshot.
+## Start IntelliJ IDE
+Before starting any concrete activities, please make sure that you checked out the latest version of our sources. Please navigate to `D:\Files\Session\CAA381` and click on the IntelliJ shortcut.
 
-TODO Add picture
+![](images/a/start-intellij.png)
 
-Now, let's create our personal branch for our source code changes. For this, execute `git checkout -b participantId` (replace participantId with your id) in the git bash window.
+## Pull Latest Sources
+We have a copy of the Timesheet Application checkout out on our machine. However, our colleagues continued working on it during the last days. Therefore, we need to check out the lastest sources after IntelliJ started. On the top right, we can click on the blue "Update Project" arrow to start the update.
 
-TODO Can this be solved easier in VS code?
-TODO Add picture
+![](images/a/git-pull.png)
 
-Finally, we need to make sure that our source code is deployed to our individual Cloud Foundry space. Please replace the placeholder `participantId` in the files `pipeline_config.yml` and `mta.yaml` with your personal participant identifier which was handed out on paper.
+After the latest sources have been successfully pulled, we will see a success indicator on the bottom right.
 
-TODO git commit + push (VS code?)
+![](images/a/pull-success.png)
+
+## Create Personal Branch
+
+Now, let's create our personal branch for our source code changes. On the bottom right, click on `master` and then select `New branch` from the popup menu.
+
+![](images/a/new-branch.png)
+
+In the next dialog, enter your personal participant id which has been handed out to you and click on `OK`.
+
+![](images/a/branch-name.png)
+
+    > TODO Check if MTA.YAML needs to be customized. If not, remove "participantId" from mta.yaml.
+
+Finally, we can push our personal branch to the central source code repository. In the top menu, click on `VCS > Git > Push`.
+
+![](images/a/push-branch.png)
+
+In the appearing dialog, click `Push`.
+
+![](images/a/push-dialog.png)
+
+Success! You are now ready to continue with lesson A.
+
+![](images/a/push-success.png)
 
 # Exercises
 
