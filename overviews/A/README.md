@@ -1,4 +1,6 @@
-# Lesson A - Seting up Continuous Delivery for the Timesheet Application
+# Lesson A - Setting up Continuous Delivery for the Timesheet Application
+
+## Starting Your Local Continuous Delivery Server
 
 Imagine that you freshly joined a new development team. The team is new to cloud development and started recently to work on a new project, the Timesheet Application.
 
