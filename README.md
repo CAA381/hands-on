@@ -40,7 +40,7 @@ Before we get started with real work, we need to prepare our work environment. I
 ![](images/a/start-intellij.png)
 
 ## Pull Latest Sources
-We have a copy of the Timesheet Application checkout out on our machine. However, our colleagues continued working on it during the last days. Therefore, we need to check out the lastest sources after IntelliJ started. On the top right, we can click on the blue "Update Project" arrow to start the update.
+We have a copy of the Timesheet Application checked out out on our machine. However, our colleagues continued working on it during the last days. Therefore, we need to check out the lastest sources after IntelliJ started. On the top right, we can click on the blue `Update Project` arrow to start the update.
 
 ![](images/a/git-pull.png)
 
