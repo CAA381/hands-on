@@ -101,7 +101,11 @@ Now enter `participantId` as term to be replaced and your personal participant i
 
 ![](../../images/a/customize-pipeline-config.png)
 
-Finally, we just need to commit and push our new configuration to the central source code repository. On the lower left, click on `Local Changes` and then on the green "Commit" checkmark.
+Finally, we just need to commit and push our new configuration to the central source code repository. On the lower left, click on `Version Control` to open the version control pane.
+
+![](../../images/a/version-control.png)
+
+ Now click on `Local Changes` and then on the green "Commit" checkmark.
 
 ![](../../images/a/commit-pipeline-config.png)
 
