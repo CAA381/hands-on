@@ -22,7 +22,7 @@ Out project uses [SAP Cloud Application Programming](https://help.sap.com/viewer
 Every participant will have a dedicated Cloud Foundry space, accessible with the provided username and password from the handouts on your desks. Furthermore, we will use the following services to observe and operate our application:
    * **Cloud Controller**\
    Maintaining a database with tables for organizations, spaces, services, user roles, and more. Via it, we can understand what the current state of our application is (is it running, is it stopped, is it crashed, etc.)
-   * **SAP CLoud Platform Alert Notification**\ 
+   * **SAP Cloud Platform Alert Notification**\ 
    We are going to use this service define events (alerts) that can occur with our application (or its dependencies). Once these events occur, the Alert Notification will notify us via whatever channel. For the exercise case, we are going to use it to define what we want to receive an alert when some of our application's components are unavailable.
    
 * **Slack**\
