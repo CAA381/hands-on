@@ -27,7 +27,7 @@ Luckily, if you are building your application with the SAP Cloud Application Pro
 
 
 * Exercise A1 - [Starting Your Local Continuous Delivery Server](../../exercises/A1/README.md)
-* Exercise A2 - [Configure Custom Alerts](../../exercises/A2/README.md)
+* Exercise A2 - [Creating your first pipeline](../../exercises/A2/README.md)
 
 
 [[![](../../images/nav-home.png) Overview page](../../README.md) ｜ [![](../../images/nav-next.png) Start Exercise](../../exercises/A1/README.md)]
