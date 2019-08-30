@@ -36,6 +36,26 @@ Everything has been already configured for you so that you can focus on the DevO
 * An active subscription to [Alert Notification](https://cloudplatform.sap.com/capabilities/product-info.SAP-Cloud-Platform-Alert-Notification.df14655e-ee31-45ab-b755-71f869e359c8.html).
 * SAP CAP based application. Learn how to build one [here](https://developers.sap.com/group.cp-apm-full-stack-app.html)
 
+# Exercises
+
+## Short overview
+
+1. Set up a deployment pipeline which deploys the sample app into our Cloud Foundry space
+2. Intentionally introduce an error into our deployment process. Explore how easy it is to understand this error. Respectively how easy it is to fix it.
+3. Fix the error situation
+4. Deploy and test the application into your environment
+5. Define a subscription for and alert, which notifies us every time some of the app's components is in a state different than STARTED.
+    > Note: we will refer to these as lifecycle management alerts
+
+6. Intentionally break the application to receive an alert about its breakage
+7. Explore sources of the app. Notice that there is a place where something unusual happens. In that very place also our app sends an alert to Alert Notification that something concrete for it has happened
+    > Note: we will refer to these as custom alerts
+
+8. Define a subscription for an alert which notifies us for this particular situation
+9. Intentionally trigger the unusual case and get notified for it.
+
+The actual exercises are grouped into three lessons
+
 # Preparation (Mandatory)
 
 ## Start IntelliJ IDE
@@ -75,26 +95,6 @@ In the appearing dialog, click `Push`.
 Success! You are now ready to continue with lesson A.
 
 ![](images/a/push-success.png)
-
-# Exercises
-
-## Short overview
-
-1. Set up a deployment pipeline which deploys the sample app into our Cloud Foundry space
-2. Intentionally introduce an error into our deployment process. Explore how easy it is to understand this error. Respectively how easy it is to fix it.
-3. Fix the error situation
-4. Deploy and test the application into your environment
-5. Define a subscription for and alert, which notifies us every time some of the app's components is in a state different than STARTED.
-    > Note: we will refer to these as lifecycle management alerts
-
-6. Intentionally break the application to receive an alert about its breakage
-7. Explore sources of the app. Notice that there is a place where something unusual happens. In that very place also our app sends an alert to Alert Notification that something concrete for it has happened
-    > Note: we will refer to these as custom alerts
-
-8. Define a subscription for an alert which notifies us for this particular situation
-9. Intentionally trigger the unusual case and get notified for it.
-
-The actual exercises are grouped into three lessons
 
 ## Lesson A – Seting up Continuous Delivery for the Timesheet Application
 In lesson A, you will bring your application source code to life by deploying it to SAP Cloud Platform. You might be familar with complex and slow release cycles in traditional software development. In this lesson, you will learn how you can deliver application changes to production within just a few minutes and without risking major regressions for your customers. In particular, we will run through the following streamlined steps:
