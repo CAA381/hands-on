@@ -32,7 +32,7 @@ Now, let's create our personal branch for our source code changes. On the bottom
 
 ![](../images/a/new-branch.png)
 
-In the next dialog, enter your <span style="color:red">**personal participant id**</span> which has been handed out to you and click on `OK`.
+In the next dialog, enter your ***personal participant id*** which has been handed out to you and click on `OK`.
 
 ![](../images/a/branch-name.png)
 
