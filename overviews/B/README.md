@@ -3,9 +3,6 @@
 # Brief Overview
 Once we have the setup of our deployment and development infrastructure, we have the assurance that we can freely deploy our application onto the Cloud Platform from anywhere and anytime we want. However, once the application is operational, we are going to face another challenge. What is the prio 0 task that every DevOps engineer has? Keep the site alive (or Live Site First, as you might have heard it). We should keep our business running no matter what. Therefore we should have the means for monitoring and control of our application. Into that exercise, we are going to learn how to understand instantly about problems with our productive application. We are going to use the SAP Cloud Platform Alert Notification service, which allows us to understand abouth those problems via the channel we like.
 
-
-# Objective 
-
 Alert Notification is an SAP Cloud Platform based service which provides you with the ability to instantly understand whenever there’s an issue with your cloud application or its dependencies. Furthermore, it is notifying you via any channel of alert management you like – no matter if this is mail, some corporate chat (like Slack), ticketing system or even SAP Solution Manager or Focused Run for SAP Solution Manager.
 
 ![](../../images/b/b1_overview.png)
