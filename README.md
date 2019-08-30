@@ -16,10 +16,14 @@ We will work with IntelliJ as IDE to edit and push the code of the Timesheet App
 For central source code management, we will use GitLab. We use a shared source code repository as starting point. In this repository, each participant will create his own branch to isolate source code changes from other participants.
 * **Project Piper Cx Server**\
 Project Piper provides tools for the efficient implementation of Continuous Delivery in the SAP ecosystem. We will use the Piper Cx Server to create an own local Continuous Delivery server instance out of the box. In this pre-configured environemnt, we will then execute the SAP Cloud SDK pipeline to run the build, tests, quality checks, and deployment of our Timesheet Application.
+* **MTA Deploy Service**\ 
+Out project uses [SAP Cloud Application Programming](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/00823f91779d4d42aa29a498e0535cdf.html) model and it is modeled as a [Multitarget application (MTA)](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/c4f0d850b6ba46089a76d53ab805c9e6.html). Multitarget applications allow you to model solutions that consists of 1 or more different components written in differnt languages as a single deployment unit. The MTA Deploy Service takes care to execute enterprise-grade deployments providing you features like blue-green deployment and many more.
 * **SAP Cloud Platform Cloud Foundry Space**\
 Every participant will have a dedicated Cloud Foundry space, accessible with the provided username and password from the handouts on your desks. Furthermore, we will use the following services to observe and operate our application:
-   * The Cloud Controller maintaining a database with tables for organizations, spaces, services, user roles, and more. Via it, we can understand what the current state of our application is (is it running, is it stopped, is it crashed, etc.)
-   * The Alert Notification Service which is used to define events (alerts) that can occur with our application (or its dependencies). Once these events occur, the Alert Notification will notify us via whatever channel. For the exercise case, we are going to use it to define what we want to receive an alert when some of our application's components are unavailable.
+   * **Cloud Controller**\
+   Maintaining a database with tables for organizations, spaces, services, user roles, and more. Via it, we can understand what the current state of our application is (is it running, is it stopped, is it crashed, etc.)
+   * **SAP CLoud Platform Alert Notification**\ 
+   We are going to use this service define events (alerts) that can occur with our application (or its dependencies). Once these events occur, the Alert Notification will notify us via whatever channel. For the exercise case, we are going to use it to define what we want to receive an alert when some of our application's components are unavailable.
    
 * **Slack**\
 Finally, we will use Slack for receiving alerts. You will also have the opportunity to use your email address.
