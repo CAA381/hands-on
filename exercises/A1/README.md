@@ -1,4 +1,4 @@
-# Lesson A - Setting up Continuous Delivery for the Timesheet Application
+# Lesson A – Setting up CI/CD pipeline
 
 # Ecercise A1 - Starting Your Local Continuous Delivery Server
 
