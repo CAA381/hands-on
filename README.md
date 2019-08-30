@@ -1,7 +1,7 @@
 # Description
 Welcome to our hands-on session *CAA381 Taking Your DevOps Skills on SAP CloudPlatform to the Next Level* which belongs to the learning journey *Apply DevOps in an SAP solution landscape*. In the next two hours, you will learn and practice how SAP tools help you to build, deliver, and operate high-quality cloud applications that will delight your customers ...and your development team.
 
-# Used Landscape 
+# Exercise Landscape 
 
 During this session, we will interact with various tools and systems. The following sketch shows an overview of the flow of our session.
 ![System Setup](images/system_setup_.png)
