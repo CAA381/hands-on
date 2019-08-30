@@ -111,4 +111,4 @@ After pushing your changes succesfully, you will see the following pop-up on the
 
 
 
-![](../../images/nav-home.png) Overview page](../../README.md) ｜ [![](../../images/nav-next.png) Next Exercise](../A2/README.md)
+![](../../images/nav-home.png) [Overview page](../../README.md) ｜ [![](../../images/nav-next.png) Next Exercise](../A2/README.md)
