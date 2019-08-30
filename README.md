@@ -56,6 +56,12 @@ Everything has been already configured for you so that you can focus on the DevO
 
 The actual exercises are grouped into three lessons
 
+# Final hints before you start
+
+* As the two lessons don't depend on each other, you can start from wherever you like. In 2 hours, you should be able to run both of them. We recommend executing the lessons consecutively. **Only the preparation steps need to be done at the beginning.**
+* **Use the provided Student Overview Paper to verify credentials during the hands-on session.**
+* Your Teched image will be automatically deleted 5 minutes after the end of the course.
+
 # Preparation (Mandatory)
 Preparation is mandatory for both exercises. 
 
@@ -78,12 +84,6 @@ In this lesson, you will learn how to observe and control your application after
 
 ![](images/nav-next.png) [Overview and Start](overviews/B/README.md)
 
-
-# Final hints before you start
-
-* As the two lessons don't depend on each other, you can start from wherever you like. In 2 hours, you should be able to run both of them. We recommend executing the lessons consecutively. **Only the preparation steps need to be done at the beginning.**
-* **Use the provided Student Overview Paper to verify credentials during the hands-on session.**
-* Your Teched image will be automatically deleted 5 minutes after the end of the course.
 
 # Handy links
 * [Blog posts with regards to SAP Cloud SDK and Cx Server](https://blogs.sap.com/2017/05/10/first-steps-with-sap-s4hana-cloud-sdk/)
