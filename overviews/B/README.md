@@ -24,8 +24,6 @@ Alert Notification is an SAP Cloud Platform based service which provides you wit
 
 * Exercise B1 - [Configure Alerts for App State Changes](../../exercises/B1/README.md)
 * Exercise B2 - [Configure Custom Alerts](../../exercises/B2/README.md)
-* Exercise B3 - [Export Configuration](../../exercises/B3/README.md)
-
 
 
 [[![](../../images/nav-home.png) Overview page](../../README.md) ｜ [![](../../images/nav-next.png) Start Exercise](../../exercises/B1/README.md)]
