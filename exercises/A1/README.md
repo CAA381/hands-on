@@ -2,6 +2,29 @@
 
 # Ecercise A1 - Starting Your Local Continuous Delivery Server
 
+## Objective
+Every software needs a way to be delivered to its consumers. In the cloud world this is done exclusevely by continous delivery systems. This allows developement teams to start easily get the code from their development environment to test environment and then to production. Depending on the release pocess of a development team this can happen either regularly (let's say every two weeks) or immediatelly (whenever the team decides they want a new productive version of their cloud solution).
+
+On top of the Continous Delivery systems come the pipelines, which allow us full automation of our dev-to-production process. The pipelines are a set of multiple steps that should be executed during each phase of moving the solution from one environment tot another. For example during the test phase a set of integration tests should be executed to proceed to production.
+
+Having all of that in mind you can figure out that setup and maintaining such an envionment is not an easy task. With Project Piper Cx Server are making this task trivial. Explore the exercise further to understand how.
+
+
+### What you will learn during the exercise
+* You will learn how to start a Docker container.
+* You will learn what Cx Server is.
+* You will explore Jenkins
+
+### Estimated Time
+25 minutes
+
+## Exercise Steps
+
+1. Start a Docker container with installed Jenkins within it.
+2. Configure Jenkins
+
+
+## Start Jenkins
 Let's get our hands dirty and start the Continuous Delivery server on our local machine. All we need is internet access, Docker, and the `cx-server` lifecycle management script. With this script, we can conduct operations such as starting, stopping, and updating our server.
 
 For your convinience, the `cx-server` script is alrady included in the Timesheet Application. From `D:\Files\Session\CAA381\caa381` navigate into the `cx-server` sub-folder. 
