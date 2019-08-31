@@ -96,7 +96,7 @@ During exercise B1 we explored how we can create Subscriptions, Actions and Cond
 
 ![](../../images/b/b2_5_import_ok.png)
 
->> Note that if you see the message **Failed to import subscription**, you most probably have missed to change the name of your subscription in point 3.
+> Note that if you see the message **Failed to import subscription**, you most probably have missed to change the name of your subscription in point 3.
 
 6. Navigate to the subscriptions screen and verify that this is what you see
 
