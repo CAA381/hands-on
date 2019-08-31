@@ -127,6 +127,8 @@ Once we are done with our configuration. What is left to do is to generate an us
 
 ![](../../images/b/b2_10_verify_conf.png)
 
+4. **This is step is important, do not miss** Open notepad, or other text editor and copy the client_id and client_secret values to it. 
+
 ## 3. Explore the Application Code
 
 Now we are good to go. We are ready to post our custom alert. From now on you have two possible options.
@@ -218,5 +220,26 @@ client.sendEvent(prepareCustomEvent("Custome Alert From the Application",
   
 
 ## 4. Post the Custom Alert
+
+We are good to go to post our custom Alert. 
+
+1. To do so - in Cloud Cockpit open your applicaiton.
+
+![](../../images/b/b2_12_open_app.png)
+
+2. Click on the app URL
+
+![](../../images/b/b2_13_app_url.png)
+
+3. Now what we should do is to call our ProblemTrigger and also give it the username and the password that we generated in the previous exercise. We have already the URL of our application in our browser. What you should do is to call the TriggerProblem servlet itself and add the username and the password as URL parameters. For that purpose the URL you call should look like this
+
+```
+https://<time sheet applciation url>/alert?clientId=<the client id you copied>&clientSecret=<the client secret you copied from>
+```
+4. Once you have assembled this URL simply hit enter.
+
+5. Now in your Slack channel you should see the alert.
+
+![](../../images/b/b2_14_slack.png)
 
 [![](../../images/nav-previous.png) Previous Exercise](../B1/README.md) ｜[![](../../images/nav-home.png) Overview page](../../README.md) ｜
