@@ -1,6 +1,25 @@
 # Lesson A – Setting up CI/CD pipeline
 # Exercise A2 - Creating your first pipeline
 
+## Objective
+Once we have started our Continous Delivery server it is time to build a pipeline. Piplenies are essential to the modern software delivery pocess. They give us a lot - we can make our development-to-production process in phases. During those phases we can run tests, validate our product and make sure that we don't introduce any regressions in our productive version. Furhtermore all of this happens automatically.
+
+Pipelines, however need configuration, but with SAP Cloud SDK and Project Piper Cx Server this configuration is minimal. In that exercise you will understand how to start with a pipeline in just couple of minutes
+
+### What you will learn during the exercise
+* You will learn how to configure security in Jenkins.
+* You will learn how to configure your first pipeline.
+* You are going to deploy your application to thte SAP Cloud Platform.
+
+### Estimated Time
+25 minutes
+
+## Exercise Steps
+
+1. Configure Security
+2. Configure Pipeline
+3. Deploy your applicaiton
+
 ## Enter Deployment Credentials
 Open Google Chrome and navigate to localhost:8080 to open the user interface.
 
