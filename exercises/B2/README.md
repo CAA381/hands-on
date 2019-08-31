@@ -104,6 +104,29 @@ During exercise B1 we explored how we can create Subscriptions, Actions and Cond
 
 ## 2. Configure Basic Authentication
 
+Once we are done with our configuration. What is left to do is to generate an user and password with which the application will be able to post the custom alert. 
+
+1. This happens via the **Service Keys** UI of the Alert Notification, so navigate to it and click on the **Create Service Key** button.
+
+![](../../images/b/b2_7_service_keys.png)
+
+2. Copy the configuration below and paste it into **Configuration Parameters (JSON)** this will tell the Alert Notification that we want credential for BASIC authentication and not for OAuth.
+
+```javascript
+{"type":"BASIC"}
+```
+
+![](../../images/b/b2_8_basic_conf.png)
+
+
+2. Give your configuration a name something like **basic_auth_service_keys** and click **Save**
+
+![](../../images/b/b2_9_save_conf.png)
+
+3. You should see something like in the picture below.
+
+![](../../images/b/b2_10_verify_conf.png)
+
 ## 3. Explore the Application Code
 
 ## 4. Post the Custom Alert
