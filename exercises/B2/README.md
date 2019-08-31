@@ -130,3 +130,5 @@ Once we are done with our configuration. What is left to do is to generate an us
 ## 3. Explore the Application Code
 
 ## 4. Post the Custom Alert
+
+[![](../../images/nav-previous.png) Previous Exercise](../B1/README.md) ｜[![](../../images/nav-home.png) Overview page](../../README.md) ｜
