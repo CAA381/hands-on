@@ -32,6 +32,66 @@ This is where the custom alerts come in play. Alert Notification exposes an REST
 
 ## 1. Import Alerts
 
+During exercise B1 we explored how we can create Subscriptions, Actions and Conditions via Cloud Cockpit. During this exercise we are going to use a different approach. We are going to **import** our configuraion. Export/Import feature of SAP Cloud Platform Alert Notification allows us to configure once and then import the configuration into different accounts. This certainly saves a lot of clicking.
+
+**If in the previour exercise you have chose to use your email instead of slack channel please call the session facilitator in order to help you with handling your configuration.**
+
+1. Let's start by opening the Export/Import screen of Alert Notifcation. To do so in Cloud Cokpit - Alert Notification UI click on **Export and Import**
+
+![](../../images/b/b2_1_export_import.png)
+
+2. Now it is time to import our configuraion. We have already defined action (send us the alert to a slack channel). What is left to do is to define a Subsctiption and a Condtion that matches our alert. For that purpose copy the json configuration below. 
+```
+{
+  "conditions": [
+    {
+      "name": "AlertIsException",
+      "propertyKey": "eventType",
+      "predicate": "ANY",
+      "propertyValue": "",
+      "labels": [],
+      "description": ""
+    }
+  ],
+  "actions": [
+    {
+      "name": "SendMeSlackMessage",
+      "state": "ENABLED",
+      "labels": [],
+      "description": "",
+      "destination": "https://hooks.slack.com/services/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",
+      "type": "SLACK"
+    }
+  ],
+  "subscriptions": [
+    {
+      "name": "<Your custom alert name>",
+      "conditions": [
+        "AlertIsException"
+      ],
+      "actions": [
+        "SendMeSlackMessage"
+      ],
+      "labels": [],
+      "state": "ENABLED",
+      "description": ""
+    }
+  ]
+}
+```
+
+3. Paste the json into the **Import** field of the Alert Notification UI and **change** the name of the subsription from **\<Your custom alert name>** to **MyCustomAlertLastThreeDigitsOfYourUserName**.
+
+![](../../images/b/b1_2_change_name.png)
+
+4. Click on the **Import** button.
+
+![](../../images/b/b2_3_click_import.png)
+
+5. This action will delete our previours configuration, so click on **OK**. 
+
+![](../../images/b/b2_4_click_ok.png)
+
 ## 2. Configure Basic Authentication
 
 ## 3. Explore the Application Code
