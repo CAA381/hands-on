@@ -121,7 +121,8 @@ Once we are done with our configuration. What is left to do is to generate an us
 
 2. Give your configuration a name something like **basic_auth_service_keys** and click **Save**
 
-![](../../images/b/b2_9_save_conf.png)
+![](../../images/b/
+.png)
 
 3. You should see something like in the picture below.
 
