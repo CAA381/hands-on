@@ -129,6 +129,13 @@ Once we are done with our configuration. What is left to do is to generate an us
 
 ## 3. Explore the Application Code
 
+Now we are good to go. We are ready to post our custom alert. From now on you have two possible options.
+
+A) **To Code** - if you want to get your hands dirty and writ a lttile code this is your flow. **Note that this will put additional ~20 minutes on top of the exericse**. 
+
+B) **Not to Code** - this is the main flow of the exercise continuing below
+
+
 ## 4. Post the Custom Alert
 
 [![](../../images/nav-previous.png) Previous Exercise](../B1/README.md) ｜[![](../../images/nav-home.png) Overview page](../../README.md) ｜
