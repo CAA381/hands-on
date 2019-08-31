@@ -13,7 +13,7 @@ Having all of that in mind you can figure out that setup and maintaining such an
 ### What you will learn during the exercise
 * You will learn how to start a Docker container.
 * You will learn what Cx Server is.
-* You will explore Jenkins
+* You will explore how you can configure a pipleine.
 
 ### Estimated Time
 25 minutes
@@ -21,7 +21,7 @@ Having all of that in mind you can figure out that setup and maintaining such an
 ## Exercise Steps
 
 1. Start a Docker container with installed Jenkins within it.
-2. Configure Jenkins
+2. Customize Your Pipeline Configuration
 
 
 ## Start Jenkins
