@@ -2,55 +2,133 @@
 # Exercise A2 - Creating your first pipeline
 
 ## Objective
-The purpose of this exercise is to get you into a bit more details about our offerings of setting up your CI/CD environment in an easy and 
-very intuitive manner. You will use the Jenkins which we have configured and you will see how very easy you can build a pipeline thanks to SAP's offerings.
-> Note: Be sure to go through the [preparation](../../prep/README.md) steps before starting this exercise.
-## Estimated time
-30 minutes
+Once we have started our Continous Delivery server it is time to build a pipeline. Piplenies are essential to the modern software delivery pocess. They give us a lot - we can make our development-to-production process in phases. During those phases we can run tests, validate our product and make sure that we don't introduce any regressions in our productive version. Furhtermore all of this happens automatically.
 
-# 1. Introduction to the Cx Server 
-> **Note - TO BE DELETED IN THE FINAL VERSION**  More information here is yet to come. Purpose and explanation
+Pipelines, however need configuration, but with SAP Cloud SDK and Project Piper Cx Server this configuration is minimal. In that exercise you will understand how to start with a pipeline in just couple of minutes
 
-# 2. Understanding Jenkins Pipelines
-> **Note - TO BE DELETED IN THE FINAL VERSION**  More information here is yet to come. Purpose and explanation
+### What you will learn during the exercise
+* You will learn how to configure security in Jenkins.
+* You will learn how to configure your first pipeline.
+* You are going to deploy your application to thte SAP Cloud Platform.
 
-# 3. Creating a Jenkins Pipeline
-## 3.1 - Open Blue Ocean
+### Estimated Time
+25 minutes
 
-Now, after you know more about Jenkins pipelines we can crearte one. For that purpose we first need to open our Jenkins URL https://127.0.0.1 and log in with the credential that we created in [Exercise B1](../B1/README.md)
+## Exercise Steps
 
-After you have done so click on the Blue Ocean pic 
-![](../../images/a/a1_open_blue_ocean.png)
+1. Configure Security
+2. Configure Pipeline
+3. Deploy your applicaiton
 
-## 3.2 - Start Pipeline creation 
-In order to initiate the pipeline creation simply click on the "Create a new Pipeline" button.
-![](../../images/a/a1_create_new_pipeline.png)
+## Enter Deployment Credentials
+Open Google Chrome and navigate to localhost:8080 to open the user interface.
 
-> **Note - TO BE DELETED IN THE FINAL VERSION**  More information here about Jenkinsfile and what is its purpose
+1. Click on **Credentials**.
 
-## 3.3 - Connect the pipeline with your GitHub project 
-Now click on the  GitHub button
-![](../../images/a/a1_select_github.png)
+![](../../images/a/a2_credentials.png)
 
-> **TODO - TO BE DELETED IN THE FINAL VERSION**  Create tinyurl with corresponding access tokens for the project
+2. Click on **Jenkins**.
 
-After you do that you need to provide Jenkins with your GitHub's personal access token. You can obtain this by clicking [here]()
-![](../../images/a/a1_copy_access_token.png)
+![](../../images/a/a2_jenkins.png)
 
-After doing so click on "Connect" button.
+3. Click on **Global Credentials**.
 
-## 3.4 - Selecting the pipeline project
-Select the organization to which the repository belongs to. This is a single choice so simply click on the "teched-test" label.
-![](../../images/a/a1_select_teced_app.png)
+![](../../images/a/a2_global_credentials.png)
 
-## 3.5 - Finalize teh creation 
-Once we have selected the organization we should select the repository for which we want to build the pipeline for, in that case this is the "spring-music" repository. Once you select it you can click on the "Create Pipeline" button.
-![](../../images/a/a1_create_pipeline.png)
+4. Click on **Add Credentials**.
 
-## 3.6 - Check the result
-When the creation has finished you will see your pipeline into the Pipelines dashboard.
-
-![](../../images/a/a1_pipeline_dashboard.png)
+![](../../images/a/a2_add_credentials.png)
 
 
-[![](../../images/nav-previous.png) Previous Exercise](../A1/README.md) ｜[![](../../images/nav-home.png) Overview page](../../README.md) ｜ [![](../../images/nav-next.png) Next Exercise](../exercises/prep/B.md)
+5. In the ID box fill in **CF-DEPLOY**.
+
+![](../../images/a/a2_id_cf_deploy.png)
+
+
+6. In the Description box fill in again **CF-DEPLOY**.
+
+![](../../images/a/a2_desc_cf_deploy.png)
+
+7. For user enter **CAA381-\<your partisipantId@teched.cloud.sap>** in the box.
+
+![](../../images/a/a2_enter_user.png)
+
+8. For password enter the password provided to you via the paper sheets.
+
+![](../../images/a/a2_enter_pass.png)
+
+9. Save your changes by clicking **OK**.
+
+![](../../images/a/a2_click_ok.png)
+
+10. Go Back to the Jenkins home page.
+
+![](../../images/a/a2_back_to_jenkins.png)
+
+## Setup Pipeline
+
+Once we have setup our credential it is time to proceed to our pipeline. 
+
+1. On Jenkins home page click on **Create new jobs**.
+
+![](../../images/a/a2_create_new-job.png)
+
+2. Name the job as **teched2019**.
+
+![](../../images/a/a2_name_job.png)
+
+3. Click on **Multibranch Pipeline**.
+
+![](../../images/a/a2_multibranch_pipeline.png)
+
+
+4. Click on **OK**.
+
+![](../../images/a/a2_ok.png)
+
+5. In the Branch Sources click on the **Add Source** dropdown button and select **Git**.
+
+![](../../images/a/a2_source_git.png)
+
+6. As project repository enter **http://cloudl000024.wdf.sap.corp:8080/teched/caa381**.
+
+![](../../images/a/a2_project_repo.png)
+
+7. Now in the **Behaviors** section click on the **Add** dropdown buttona and select **Filter by name(with regular expression)**.
+
+![](../../images/a/a2_filter_by_name.png)
+
+8. Your configuration should look like this.
+
+![](../../images/a/a2_summary_screen.png)
+
+9. Enter in the **Regular Expression** field **your participant id**.
+
+![](../../images/a/a2_porject_id.png)
+
+10. Click on **Save**.
+
+![](../../images/a/a2_click_save.png)
+
+11. In the navigation to the left click **Open Blue Ocean**.
+
+![](../../images/a/a2_open_blue_ocean.png)
+
+12. In the navigation to the left click **Open Blue Ocean**.
+
+![](../../images/a/a2_open_blue_ocean.png)
+
+
+13. In the blue ocean click on **your participant id**
+
+![](../../images/a/a2_participant-id.png)
+
+
+14. You now should see your pipeline
+
+![](../../images/a/a2_pipeline.png)
+
+
+
+
+[![](../../images/nav-previous.png) Previous Exercise](../A1/README.md) ｜[![](../../images/nav-home.png) Overview page](../../README.md) ｜ [![](../../images/nav-next.png) Next Exercise](../../overviews/B/README.md)
