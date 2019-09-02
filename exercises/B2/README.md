@@ -146,33 +146,12 @@ We have created a special Java Servlet in our sample application, that triggers 
 2. Let's explore it's code for a while
 
 ```java
-package my.timesheethandson;
-
-import java.io.IOException;
-import javax.servlet.*;
-import javax.servlet.http.*;
-
-import com.sap.cloud.alert.notification.client.IAlertNotificationClient;
-import com.sap.cloud.alert.notification.client.ServiceRegion;
-import com.sap.cloud.alert.notification.client.builder.AlertNotificationClientBuilder;
-import com.sap.cloud.alert.notification.client.builder.CustomerResourceEventBuilder;
-import com.sap.cloud.alert.notification.client.builder.AffectedCustomerResourceBuilder;
-import com.sap.cloud.alert.notification.client.model.AffectedCustomerResource;
-import com.sap.cloud.alert.notification.client.model.CustomerResourceEvent;
-import com.sap.cloud.alert.notification.client.model.EventCategory;
-import com.sap.cloud.alert.notification.client.model.EventSeverity;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClients;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 public class TriggerProblem extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	private static final Logger logger = LoggerFactory.getLogger(TriggerProblem.class);
 
-	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String clientId = request.getParameter("clientId") != null ? request.getParameter("clientId") : "clientId";
 		String clientSecret = request.getParameter("clientSecret") != null ? request.getParameter("clientSecret")
 				: "clientSecret";
@@ -180,10 +159,12 @@ public class TriggerProblem extends HttpServlet {
 		try (CloseableHttpClient closableClient = HttpClients.createMinimal()) {
 			IAlertNotificationClient client = new AlertNotificationClientBuilder(closableClient)
 					.withAuthentication(clientId, clientSecret).withServiceRegion(ServiceRegion.EU10).build();
-			client.sendEvent(prepareCustomEvent("Custom Alert From the Application",
+			client.sendEvent(prepareCustomEvent("Custome Alert From the Application",
 					"This is a custom alert posted via ANS REST API"));
+			response.getWriter().println("Alert posted!");
 		} catch (IOException ex) {
 			logger.error("Could not initialize closable http client", ex);
+			response.getWriter().println("Alert failed to post " + ex.getMessage());
 		}
 	}
 
@@ -203,7 +184,7 @@ public class TriggerProblem extends HttpServlet {
 
 Alert Notification provides you with a Java based client which enables custom alerts with couple of lines of code. The important parts of the code above are:
 
-2.1. This is how you create the client which will make the REST API calls. We point to the EU10 datacenter which is where the spaces for this hands-on are created. We also pass the username and the password which we have created in the previous section of this exercise.
+2.1. This is how you create the client which will make the REST API calls. We point to the EU10 datacenter which is where the spaces for this hands-on are created. We also pass the client_id and the client_secret which we have created in the previous section of this exercise.
 
 ```java 
 
@@ -231,14 +212,18 @@ We are good to go to post our custom Alert.
 
 ![](../../images/b/b2_13_app_url.png)
 
-3. Now what we should do is to call our ProblemTrigger and also give it the username and the password that we generated in the previous exercise. We have already the URL of our application in our browser. What you should do is to call the TriggerProblem servlet itself and add the username and the password as URL parameters. For that purpose the URL you call should look like this
+3. Now it is time to trigger our alert. To do so we should tell the TriggerProblem class our **client_id** and **client_secret** that we have generated in the previous steps. To do so in the application URL that you have opened add - /alert.html - the URL should look like this
 
 ```
-https://<time sheet applciation url>/alert?clientId=<the client id you copied>&clientSecret=<the client secret you copied from>
+https://<time sheet applciation url>/alert.html
 ```
-4. Once you have assembled this URL simply hit enter.
 
-5. Now in your Slack channel you should see the alert.
+4. Once you hit eneter a form is going to open, simply fill the client id and client secret and click on **Submit**.
+![](../../images/b/b2_15_post_form.png)
+
+5. You should see a success message.
+
+6. Now in your Slack channel you should see the alert.
 
 ![](../../images/b/b2_14_slack.png)
 
