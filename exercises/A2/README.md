@@ -1,132 +1,123 @@
-# Lesson A – Setting up CI/CD pipeline
-# Exercise A2 - Creating your first pipeline
+# Lesson A – Seting up Continuous Delivery for the Timesheet Application
+
+# Exercise A2 - Setting Up Your Pipeline
 
 ## Objective
 Once we have started our Continous Delivery server it is time to build a pipeline. Piplenies are essential to the modern software delivery pocess. They give us a lot - we can make our development-to-production process in phases. During those phases we can run tests, validate our product and make sure that we don't introduce any regressions in our productive version. Furhtermore all of this happens automatically.
 
 Pipelines, however need configuration, but with SAP Cloud SDK and Project Piper Cx Server this configuration is minimal. In that exercise you will understand how to start with a pipeline in just couple of minutes
+> TODO
 
 ### What you will learn during the exercise
-* You will learn how to configure security in Jenkins.
-* You will learn how to configure your first pipeline.
-* You are going to deploy your application to thte SAP Cloud Platform.
-
-### Estimated Time
-25 minutes
+> TODO
 
 ## Exercise Steps
+* For deploying the application, we need to add the SCP target space to our declarative pipeline configuration. The `pipeline_config.yml` file is contained in our source code repository.
+* For running the Continuous Delivery pipeline of our application, we need to create a build job in Jenkins that is linked to our source code repository.
+> TODO
 
-1. Configure Security
-2. Configure Pipeline
-3. Deploy your applicaiton
+## Customize Your Pipeline Configuration
 
-## Enter Deployment Credentials
-Open Google Chrome and navigate to localhost:8080 to open the user interface.
+Thanks to the high degree of standardization in our project, we can adopt the SAP Cloud SDK pipeline without writing a single line of code. For modifying pipeline behavior, we can leverage the declarative `pipeline_config.yml` file which is located in the root of our project. Here we can perform well-defined customizations. In this session, we will use it to define the location of the HANA database which will be used during automated tests and to define the SAP Cloud Platform deploymemt targets.
 
-1. Click on **Credentials**.
+In this session, the instructors created a SAP Cloud Platform user account and corresponding target space for each participant. So, let's switch back to IntelliJ and add the deployment target of our app to `pipeline_config.yml`.
 
-![](../../images/a/a2_credentials.png)
+Locate `pipeline_config.yml` in your project view and open it with a double click. As you can see, the configuration file already contains placeholder configuration entries for the HANA database and for the deployment. In order to make it work, we need to fill the placeholder `participantId` with the id that was assigned to us.
 
-2. Click on **Jenkins**.
+For this, click on `Edit > Find > Replace` like shown below.
 
-![](../../images/a/a2_jenkins.png)
+![](../../images/a/replace-pipeline-config.png)
 
-3. Click on **Global Credentials**.
+Now enter `participantId` as term to be replaced and your personal participant id as replacement. Then click on `Replace all`. Then save the file.
 
-![](../../images/a/a2_global_credentials.png)
+![](../../images/a/customize-pipeline-config.png)
 
-4. Click on **Add Credentials**.
+Finally, we just need to commit and push our new configuration to the central source code repository. On the lower left, click on `Version Control` to open the version control pane.
 
-![](../../images/a/a2_add_credentials.png)
+![](../../images/a/version-control.png)
 
+ Now click on `Local Changes` and then on the green "Commit" checkmark.
 
-5. In the ID box fill in **CF-DEPLOY**.
+![](../../images/a/commit-pipeline-config.png)
 
-![](../../images/a/a2_id_cf_deploy.png)
+In the appearing dialog, perform the following steps:
+* double check that your participant id is correctly filled into the placeholders in `pipeline_config.yml`
+* enter a commit message (e.g., "adapt pipeline config")
+* click on the down-facing arrow in the `Commit` button
+* select `Commit and Push`
 
+![](../../images/a/push-pipeline-config.png)
 
-6. In the Description box fill in again **CF-DEPLOY**.
+After pushing your changes succesfully, you will see the following pop-up on the bottom right.
 
-![](../../images/a/a2_desc_cf_deploy.png)
+![](../../images/a/push-success.png)
 
-7. For user enter **CAA381-\<your partisipantId@teched.cloud.sap>** in the box.
-
-![](../../images/a/a2_enter_user.png)
-
-8. For password enter the password provided to you via the paper sheets.
-
-![](../../images/a/a2_enter_pass.png)
-
-9. Save your changes by clicking **OK**.
-
-![](../../images/a/a2_click_ok.png)
-
-10. Go Back to the Jenkins home page.
-
-![](../../images/a/a2_back_to_jenkins.png)
-
-## Setup Pipeline
-
-Once we have setup our credential it is time to proceed to our pipeline. 
-
-1. On Jenkins home page click on **Create new jobs**.
-
-![](../../images/a/a2_create_new-job.png)
-
-2. Name the job as **teched2019**.
-
-![](../../images/a/a2_name_job.png)
-
-3. Click on **Multibranch Pipeline**.
-
-![](../../images/a/a2_multibranch_pipeline.png)
+The project is now fully configured for Continuous Delivery. Wasn't that easy!?
+Next, let's configure our Continuous Delivery server.
 
 
-4. Click on **OK**.
+## Configure Your Continuous Delivery Server
 
-![](../../images/a/a2_ok.png)
+After your project is configured, let's set up the Jenkins build job for running the pipeline. We will first create the necessary deploymnent credentials and then a build job for our project.
 
-5. In the Branch Sources click on the **Add Source** dropdown button and select **Git**.
+Re-open your browser, navigate to the Jenkins user interface (http://localhost:8080).
 
-![](../../images/a/a2_source_git.png)
+### Create Deployment Credentials
 
-6. As project repository enter **http://cloudl000024.wdf.sap.corp:8080/teched/caa381**.
+The Continuous Delivery pipeline of your project will finally deploy to the SAP Cloud Platform space that we created for you for the purpose of this session. Before we can run it, we need to save the deployment credentials in Jenkins. This procedure is a bit cumbersome - so strictly follow the steps described.
 
-![](../../images/a/a2_project_repo.png)
+* On the Jenkins landing page, look out for the menu on the left and click on `Credentials`.<br>
+![](../../images/a/credentials1.png)
 
-7. Now in the **Behaviors** section click on the **Add** dropdown buttona and select **Filter by name(with regular expression)**.
+* Click on the `System` sub-item that appeared below `Credentials`.<br>
+![](../../images/a/credentials2.png)
 
-![](../../images/a/a2_filter_by_name.png)
+* Look out for the `System` section and click on `Global credentials (unrestricted)`.<br>
+![](../../images/a/credentials3.png)
 
-8. Your configuration should look like this.
+* In the menu section, you should now see the item `Add Credentials` - click on it.
+<br>![](../../images/a/credentials4.png)
 
-![](../../images/a/a2_summary_screen.png)
+* Now you should see the form to enter a new credentials entry. Based on `pipeline_config.yml` which we edited earlier, the pipeline will retrieve the deployment credentials from the entry with ID `CF-DEPLOY`. To create it, enter the following data. Make sure that you use the username and password that was handed out to you.<br>![](../../images/a/credentials5.png)
 
-9. Enter in the **Regular Expression** field **your participant id**.
+* Finally, click on `OK` and navigate back to the Jenkins landing page (http://localhost:8080).
 
-![](../../images/a/a2_porject_id.png)
+Next, we will create the build job for our project.
 
-10. Click on **Save**.
+### Create Build Job
 
-![](../../images/a/a2_click_save.png)
+We will now create a build job for our project which will run the pipeline for our branch.
 
-11. In the navigation to the left click **Open Blue Ocean**.
+* On the Jenkins landing page, click on `create new jobs`. 
+<br>![](../../images/a/create-new-job.png)
 
-![](../../images/a/a2_open_blue_ocean.png)
+* Enter `timesheet` as item name. 
+* SAP Cloud SDK Continuous Delivery pipelines are designed for multi-branch git repositories. Therefore, select `Multibranch Pipeline` as job type.
+<br>![](../../images/a/multibranch.png)
+* Finally, click on `OK`.
 
-12. In the navigation to the left click **Open Blue Ocean**.
+Next, we will connect the source code repository to the new job.
 
-![](../../images/a/a2_open_blue_ocean.png)
+* In the section `Branch Sources`, click on the button `Add source` and then on `Git`.
+<br>![](../../images/a/branch-source.png)
 
+* In the new pane, enter the git url `http://cloudl000024.wdf.sap.corp:8080/teched/caa381` as project repository.
 
-13. In the blue ocean click on **your participant id**
+By default, the multibranch pipelines will execute the pipeline for all branches of our repository. This is usually the desired behavior. However, since we are using a joint git repository in this hands-on session, we need to make sure that our build server does not start start executing the pipelines of our co-participants. We can do this by limiting the build job to our branch only:
 
-![](../../images/a/a2_participant-id.png)
+* Find the `Behaviors` section
+* Click on the button `Add`
+* In the menu, click on `Filter by name (with regular expression)`
+<br>![](../../images/a/branch-behavior.png)
 
+* Then navigate to the new `Filter by name (with regular expression)` section and enter the name of your branch (participant id) in the text field as shown below.
+<br>![](../../images/a/branch-name.png)
 
-14. You now should see your pipeline
+* Finally, click on `Save`.
 
-![](../../images/a/a2_pipeline.png)
+* Now, Jenkins will automatically scan the repository, discover your branch, and then execute the pipeline for it.
+Make sure that Jenkins properly detects your branch (and only your branch). The corresponding output should look like the log below.
+<br>![](../../images/a/branch-scanning.png)
 
 
 

@@ -1,6 +1,6 @@
-# Lesson A – Setting up CI/CD pipeline
+# Lesson A – Seting up Continuous Delivery for the Timesheet Application
 
-# Ecercise A1 - Starting Your Local Continuous Delivery Server
+# Exercise A1 - Starting Your Local Continuous Delivery Server
 
 ## Objective
 Every software needs a way to be delivered to its consumers. In the cloud world this is done exclusevely by continous delivery systems. This allows developement teams to start easily get the code from their development environment to test environment and then to production. Depending on the release pocess of a development team this can happen either regularly (let's say every two weeks) or immediatelly (whenever the team decides they want a new productive version of their cloud solution).
@@ -92,46 +92,7 @@ After you see the success message that indicates that the Cx Server successfully
 
 ![](../../images/a/jenkins-welcome.png)
 
-Woohoo! Our Continuous Delivery server is running. Now we can look into settting up the pipeline for our project. This comprises the following steps: 
-* For deploying the application, we need to add the SCP target space to our declarative pipeline configuration. The `pipeline_config.yml` file is contained in our source code repository.
-* For running the Continuous Delivery pipeline of our application, we need to create a build job in Jenkins that is linked to our source code repository.
-
-## Customize Your Pipeline Configuration
-
-Thanks to the high degree of standardization in our project, we can adopt the SAP Cloud SDK pipeline without writing a single line of code. For modifying pipeline behavior, we can leverage the declarative `pipeline_config.yml` file which is located in the root of our project. Here we can perform well-defined customizations. In this session, we will use it to define the location of the HANA database which will be used during automated tests and to define the SAP Cloud Platform deploymemt targets.
-
-In this session, the instructors created a SAP Cloud Platform user account and corresponding target space for each participant. So, let's switch back to IntelliJ and add the deployment target of our app to `pipeline_config.yml`.
-
-Locate `pipeline_config.yml` in your project view and open it with a double click. As you can see, the configuration file already contains placeholder configuration entries for the HANA database and for the deployment. In order to make it work, we need to fill the placeholder `participantId` with the id that was assigned to us.
-
-For this, click on `Edit > Find > Replace` like shown below.
-
-![](../../images/a/replace-pipeline-config.png)
-
-Now enter `participantId` as term to be replaced and your personal participant id as replacement. Then click on `Replace all`. Then save the file.
-
-![](../../images/a/customize-pipeline-config.png)
-
-Finally, we just need to commit and push our new configuration to the central source code repository. On the lower left, click on `Version Control` to open the version control pane.
-
-![](../../images/a/version-control.png)
-
- Now click on `Local Changes` and then on the green "Commit" checkmark.
-
-![](../../images/a/commit-pipeline-config.png)
-
-In the appearing dialog, perform the following steps:
-* double check that your participant id is correctly filled into the placeholders in `pipeline_config.yml`
-* enter a commit message (e.g., "adapt pipeline config")
-* click on the down-facing arrow in the `Commit` button
-* select `Commit and Push`
-
-![](../../images/a/push-pipeline-config.png)
-
-After pushing your changes succesfully, you will see the following pop-up on the bottom right.
-
-![](../../images/a/push-success.png)
-
+Woohoo! Our Continuous Delivery server is running. Now we can look into setting up the pipeline for our project. 
 
 
 ![](../../images/nav-home.png) [Overview page](../../README.md) ｜ [![](../../images/nav-next.png) Next Exercise](../A2/README.md)
