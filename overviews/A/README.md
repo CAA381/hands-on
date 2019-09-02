@@ -150,39 +150,38 @@ The Continuous Delivery pipeline of your project will finally deploy to the SAP 
 
 * Finally, click on `OK` and navigate back to the Jenkins landing page (http://localhost:8080).
 
-Next, we will create the build job for our project that will run the pipeline for our branch.
+Next, we will create the build job for our project.
 
 ### Create Build Job
 
-and click on `create new jobs`. 
+We will now create a build job for our project which will run the pipeline for our branch.
 
-![](../../images/a/create-new-job.png)
+* On the Jenkins landing page, click on `create new jobs`. 
+<br>![](../../images/a/create-new-job.png)
 
-On the next screen, enter `timesheet` as item name. 
+* Enter `timesheet` as item name. 
+* SAP Cloud SDK Continuous Delivery pipelines are designed for multi-branch git repositories. Therefore, select `Multibranch Pipeline` as job type.
+<br>![](../../images/a/multibranch.png)
+* Finally, click on `OK`.
 
-SAP Cloud SDK Continuous Delivery pipelines are designed for multi-branch git repositories. Therefore, select `Multibranch Pipeline` as job type. Finally, click on `OK`.
+Next, we will connect the source code repository to the new job.
 
-![](../../images/a/multibranch.png)
+* In the section `Branch Sources`, click on the button `Add source` and then on `Git`.
+<br>![](../../images/a/branch-source.png)
 
-In the next screen, we will connect your source code repository to the new job. In the section `Branch Sources`, click on the button `Add source` and then on `Git`.
+* In the new pane, enter the git url `http://cloudl000024.wdf.sap.corp:8080/teched/caa381` as project repository.
 
-![](../../images/a/branch-source.png)
+By default, the multibranch pipelines will execute the pipeline for all branches of our repository. This is usually the desired behavior. However, since we are using a joint git repository in this hands-on session, we need to make sure that our build server does not start start executing the pipelines of our co-participants. We can do this by limiting the build job to our branch only:
 
-In the new pane, enter the git url `http://cloudl000024.wdf.sap.corp:8080/teched/caa381` as project repository.
+* Find the `Behaviors` section
+* Click on the button `Add`
+* In the menu, click on `Filter by name (with regular expression)`
+<br>![](../../images/a/branch-behavior.png)
 
-By default, the multibranch pipeline will execute the pipeline for all branches of our repository. This is usually the desired behavior. However, since we are using a joint git repository in this hands-on session, we need to make sure that our build server does not start start executing the pipelines of our co-participants. We can do this by limiting the build job to our branch only:
+* Then navigate to the new `Filter by name (with regular expression)` section and enter the name of your branch (participant id) in the text field as shown below.
+<br>![](../../images/a/branch-name.png)
 
-* find the `Behaviors` section
-* click on the button `Add`
-* in the menu click on `Filter by name (with regular expression)`
-
-![](../../images/a/branch-behavior.png)
-
-Then navigate to the new `Filter by name (with regular expression)` section and enter the name of your branch (participant id) in the text field as shown below.
-
-![](../../images/a/branch-name.png)
-
-Finally, click on save.
+* Finally, click on `Save`.
 
 Now, Jenkins will automatically scan the repository, discover your branch, and then execute the pipeline for it.
 Make sure that Jenkins properly detects your branch (and only your branch). The corresponding output should look like the log below.
