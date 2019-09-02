@@ -119,6 +119,41 @@ By default, the multibranch pipelines will execute the pipeline for all branches
 Make sure that Jenkins properly detects your branch (and only your branch). The corresponding output should look like the log below.
 <br>![](../../images/a/branch-scanning.png)
 
+## Monitor Pipeline Execution
+
+After Jenkins discovered your branch, it automatically started executing the `Jenkinsfile` in the root of the project. For SAP Cloud SDK projects, this is always a generic loader which references the SAP Cloud SDK pipeline defintion which is maintained in the open source repository on https://github.com/SAP/cloud-s4-sdk-pipeline.
+
+> Note: Feel free to have a look into the generic `Jenkinsfile` in your project. By setting `pipelineVersion` to a specific release, you can fix the pipeline to a specific released version. This is recommended for productive projects. Conducting a pipeline update to the most recent release is then just a matter of changing the value of `pipelineVersion`, ideally verified via a pull request.
+
+Let's inspect the progress of our pipeline execution:
+* Go back to the Jenkins landing page on http://localhost:8080.
+* You should see the `timesheet` job that we just created.
+* The `Build Executor Status` section shows several executors that are running pipeline steps and stages.
+* To inspect the execution of our pipeline, let's click on `Open Blue Ocean` in the Jenkins menu. This will bring us to the modernized (but minimal) Jenkins Blue Ocean user interface.<br>
+![](../../images/a/job-created.png)
+* Click on the `timesheet` job<br>
+![](../../images/a/timesheet-job.png)
+* Now you see all currently running pipelines of your timesheet job. To inspect the status of your first pipeline run, click on build run `1`<br>
+![](../../images/a/timesheet-branch.png)
+
+Welcome! This is the SAP Cloud SDK pipeline in action. On top you see the graph visualization of the pipeline gaining shape as the execution progresses. Each bubble in the pipeline graph belongs to a pipeline stage and all stages that are shown on a vertical line are executed in parallel. If you want to understand what's happening in a specific stage, just click on the bubble and inspect the logs shown below the pipeline graph. 
+
+> Note: In our experience, the Jenkins Blue Ocean pipeline view has the tendency to get stuck, e.g., after the end of a stage. Refreshing the browser (press `F5`) helps in such cases to show the latest state of pipeline execution.
+
+![](../../images/a/pipeline-initial.png)
+
+> Note: Your first build run will usually take quite some time because the pipeline needs to fetch many project dependencies from the internet. However, thanks to the smart and transparent download cache, follow-up builds will run significantly faster because dependencies will then be resolved locally.
+
+While the pipeline executes, let's get a better understanding of what's going on. The automated pipeline is our primary tool facilitate a quick flow of work from commit to production - because only productively deployed code is good code. Sounds risky? That's why it also acts as a quick feedback giver - because we only want well-working code to be deployed to production.
+
+So, what does the pipeline particularly do?
+* **Init**: Everything starts with the `Init` stage where the pipeline machinary gets ready. In the `Init` stage
+
+* <br>
+![](../../images/a/pipeline-failure.png)
+
+
+
 
 
 
