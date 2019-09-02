@@ -120,3 +120,76 @@ In the appearing dialog, perform the following steps:
 After pushing your changes succesfully, you will see the following pop-up on the bottom right.
 
 ![](../../images/a/push-success.png)
+
+The project is now fully configured for Continuous Delivery. Wasn't that easy!?
+Next, let's configure our Continuous Delivery server.
+
+## Configure Your Continuous Delivery Server
+
+After your project is configured, let's set up the Jenkins build job for running the pipeline. We will first create the necessary deploymnent credentials and then a build job for our project.
+
+Re-open your browser, navigate to the Jenkins user interface (http://localhost:8080).
+
+### Create Deployment Credentials
+
+The Continuous Delivery pipeline of your project will finally deploy to the SAP Cloud Platform space that we created for you for the purpose of this session. Before we can run it, we need to save the deployment credentials in Jenkins. This procedure is a bit cumbersome - so strictly follow the steps described.
+
+* On the Jenkins landing page, look out for the menu on the left and click on `Credentials`.<br>
+![](../../images/a/credentials1.png)
+
+* Click on the `System` sub-item that appeared below `Credentials`.<br>
+![](../../images/a/credentials2.png)
+
+* Look out for the `System` section and click on `Global credentials (unrestricted)`.<br>
+![](../../images/a/credentials3.png)
+
+* In the menu section, you should now see the item `Add Credentials` - click on it.
+<br>![](../../images/a/credentials4.png)
+
+* Now you should see the form to enter a new credentials entry. Based on `pipeline_config.yml` which we edited earlier, the pipeline will retrieve the deployment credentials from the entry with ID `CF-DEPLOY`. To create it, enter the following data. Make sure that you use the username and password that was handed out to you.<br>![](../../images/a/credentials5.png)
+
+* Finally, click on `OK` and navigate back to the Jenkins landing page (http://localhost:8080).
+
+Next, we will create the build job for our project that will run the pipeline for our branch.
+
+### Create Build Job
+
+and click on `create new jobs`. 
+
+![](../../images/a/create-new-job.png)
+
+On the next screen, enter `timesheet` as item name. 
+
+SAP Cloud SDK Continuous Delivery pipelines are designed for multi-branch git repositories. Therefore, select `Multibranch Pipeline` as job type. Finally, click on `OK`.
+
+![](../../images/a/multibranch.png)
+
+In the next screen, we will connect your source code repository to the new job. In the section `Branch Sources`, click on the button `Add source` and then on `Git`.
+
+![](../../images/a/branch-source.png)
+
+In the new pane, enter the git url `http://cloudl000024.wdf.sap.corp:8080/teched/caa381` as project repository.
+
+By default, the multibranch pipeline will execute the pipeline for all branches of our repository. This is usually the desired behavior. However, since we are using a joint git repository in this hands-on session, we need to make sure that our build server does not start start executing the pipelines of our co-participants. We can do this by limiting the build job to our branch only:
+
+* find the `Behaviors` section
+* click on the button `Add`
+* in the menu click on `Filter by name (with regular expression)`
+
+![](../../images/a/branch-behavior.png)
+
+Then navigate to the new `Filter by name (with regular expression)` section and enter the name of your branch (participant id) in the text field as shown below.
+
+![](../../images/a/branch-name.png)
+
+Finally, click on save.
+
+Now, Jenkins will automatically scan the repository, discover your branch, and then execute the pipeline for it.
+Make sure that Jenkins properly detects your branch (and only your branch). The corresponding output should look like the log below.
+
+![](../../images/a/branch-scanning.png)
+
+
+
+
+
