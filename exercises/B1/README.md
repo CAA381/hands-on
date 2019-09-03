@@ -113,7 +113,7 @@ Now, once we are ready with our configuration all that is left to see how it wor
 ![](../../images/b/b1_32_space_guid.png)
 
 7. Back in slack in the upper rightt corner you are going to find the **Search** field. Click on it and **paste** the space guid. Then hit eneter.
-![](../../images/b/b1_33_search_field.png)
+![](../../images/b/b1_33_search_field.png.png)
 
 8. You should see the following result. And that is your alert. You can click on **view in channel** to see the alert into the slack channel itself.
 ![](../../images/b/b1_34_search_result.png)
