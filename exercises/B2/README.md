@@ -220,4 +220,4 @@ https://<time sheet applciation url>/alert.html
 
 ![](../../images/b/b2_14_slack.png)
 
-[![](../../images/nav-previous.png) Previous Exercise](../B1/README.md) ｜[![](../../images/nav-home.png) Overview page](../../README.md) ｜
+[![](../../images/nav-previous.png) Previous Exercise](../B1/README.md) ｜[![](../../images/nav-home.png) Overview page](../../README.md) 
