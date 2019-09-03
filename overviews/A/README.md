@@ -30,7 +30,8 @@ Luckily, if you are building your application with the SAP Cloud Application Pro
 * Exercise A2 - [Setting Up Your Pipeline](../../exercises/A2/README.md)
 
 
-[[![](../../images/nav-home.png) Overview page](../../README.md) ｜ [![](../../images/nav-next.png) Start Exercise](../../exercises/A1/README.md)]
+
+[![](../../images/nav-home.png) Preparation](../prep/README.md) ｜[![](../../images/nav-home.png) Overview page](../../README.md) ｜ [![](../../images/nav-next.png) Start Exercise](../../exercises/A1/README.md)
 
 
 
