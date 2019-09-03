@@ -49,26 +49,36 @@ This exercise consists of couple of steps.
 5. Open the Subscriptions section and click the **Create** button
 ![](../../images/b/b1_9_create_sub.png)
 
-6. In the pop-up screen
-   1. Fill the subscription name to be **AppHasStopped< The last threedigits of your usernam >**. For example AppHasStopped000. You can set any other name, as far as you can recognize it afterwards.
-   2. Under Labels fill **AppStates** and hit enter or tab
-   3. Under Condition select **eventType**
+6. In the pop-up screen Fill the subscription name to be **ApplicationStateChanged< The last threedigits of your username >**. For example AppHasStopped000. **You can set any other name, that you like**. Then Click on the **Create** button.
+![](../../images/b/b1_12_create_sub.png)
+
+7. Click on **Create Condition**
+ 
+![](../../images/b/b1_12_create_cond.png)
+
+8. Now it is time to create our condition, against which the alert is going to match.
+   1. Give the condition some meanigful name. For exampel **ApplicationStateHasBeenUpdated**
+   2. Under Labels fill **AppStates** and hit enter or tab 
+   > If you have a lot of subscriptions and conditions, the labels help you filter later on. 
+   3. Under Condition select **eventType** 
+   > Every alert coming from Alert Notfication has one and the same model. It has eventType, subject, body and more fields. Alert Notificaiton exposes a catalog for alerts provided from the platform. In that catalog you can see what are the different values for certain field of an alert. In our case [this is the catalog entry](https://help.sap.com/viewer/5967a369d4b74f7a9c2b91f5df8e6ab6/Cloud/en-US/4255e6064ea44f20a540c5ae0804500d.html) that we are interested in.
    4. From the dropdown select **Is Equal To**
-   5. Then in the text field fill **audit.app.stop**
+   5. Then in the text field fill **audit.app.update**
    6. Click on **Create** button
+   > This condition basically tells Alert Notification **Please send me an alert every time the state of my application changes, no matter if it is a stop/start/crash or something else**
 ![](../../images/b/b1_12_condition_stop.png)
 
-7. On the next screnn click on **Assign**
+9. On the next screnn click on **Assign**
 
-8. Now it is time to tell Alert Notification where we want to receive those alerts. In the next screen click on the **+ Create Action link**
+10. Now it is time to tell Alert Notification where we want to receive those alerts. In the next screen click on the **+ Create Action link**
 ![](../../images/b/b1_16_create_action.png)
 
-9. In the next screen select **Slack**. Slack is an cloud-based set of proprietary team collaboration software tools and online services. With Slack you can manager different channels of communication including automatic messaging.
+11. In the next screen select **Slack**. Slack is an cloud-based set of proprietary team collaboration software tools and online services. With Slack you can manager different channels of communication including automatic messaging.
    1. Click on the Slack radio button
    2. click Next
    ![](../../images/b/b1_17_select_slack.png)
 
-10. **Open new tab in your browser and open [this url](https://docs.google.com/document/d/1EqStAAieUaFdvSG-kBsApXZGSpeefsaEBVYNNfAa4VQ/edit) and copy the link provided in it.** Back to your Cloud Cockpit.
+12. **Open new tab in your browser and open [this url](https://docs.google.com/document/d/1EqStAAieUaFdvSG-kBsApXZGSpeefsaEBVYNNfAa4VQ/edit) and copy the link provided in it.** Back to your Cloud Cockpit.
       1. In **URL Address** paste the copied URL
       2. In the name field type **PostToMySlackChannel**
       3. In Labels type **AppStates** and click tab or enter
@@ -78,10 +88,10 @@ This exercise consists of couple of steps.
 
 > **Note:** Slack is divided into channels, where you can receve your alerts. In order to integrate Alert Notification with Slack, one would need a [webhook](https://en.wikipedia.org/wiki/Webhook). In order not to bother you with Slack configurations we have pre-configured those webhooks for you. However, if you want to learn more how to configure Slack, simply click [here](https://help.sap.com/viewer/5967a369d4b74f7a9c2b91f5df8e6ab6/Cloud/en-US/88a4774f9d3f43259b4dc9e7e7729829.html?q=slack)
 
-11. On the next screen review and click **Assign**. Note that this is a **demo account**, however in productive enrionment you will have to make opt-in from Slack and confirm from within Slack
+13. On the next screen review and click **Assign**. Note that this is a **demo account**, however in productive enrionment you will have to make opt-in from Slack and confirm from within Slack
 ![](../../images/b/b1_19_assign_action.png)
 
-12. Review the final summary and click **Close**
+14. Review the final summary and click **Close**
 ![](../../images/b/b1_20_summary.png)
 
 ## 2. Stop your application and Receive alerts
