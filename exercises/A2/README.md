@@ -121,9 +121,7 @@ Make sure that Jenkins properly detects your branch (and only your branch). The 
 
 ## Monitor Pipeline Execution
 
-After Jenkins discovered your branch, it automatically started executing the `Jenkinsfile` in the root of the project. For SAP Cloud SDK projects, this is always a generic loader which references the SAP Cloud SDK pipeline defintion which is maintained in the open source repository on https://github.com/SAP/cloud-s4-sdk-pipeline.
-
-> Note: Feel free to have a look into the generic `Jenkinsfile` in your project. By setting `pipelineVersion` to a specific release, you can fix the pipeline to a specific released version. This is recommended for productive projects. Conducting a pipeline update to the most recent release is then just a matter of changing the value of `pipelineVersion`, ideally verified via a pull request.
+After Jenkins discovered your branch, it automatically started executing the SAP Cloud SDK pipeline.
 
 Let's inspect the progress of our pipeline execution:
 * Go back to the Jenkins landing page on http://localhost:8080.
@@ -138,7 +136,7 @@ Let's inspect the progress of our pipeline execution:
 
 Welcome! This is the SAP Cloud SDK pipeline in action. On top you see the graph visualization of the pipeline gaining shape as the execution progresses. Each bubble in the pipeline graph belongs to a pipeline stage and all stages that are shown on a vertical line are executed in parallel. If you want to understand what's happening in a specific stage, just click on the bubble and inspect the logs shown below the pipeline graph. 
 
-> Note: In our experience, the Jenkins Blue Ocean pipeline view has the tendency to get stuck, e.g., after the end of a stage. Refreshing the browser (press `F5`) helps in such cases to show the latest state of pipeline execution.
+> Note: In our experience, the Jenkins Blue Ocean pipeline view has the tendency to get stuck, often after the end of a stage. Refreshing the browser (press `F5`) helps in such cases to show the latest state of pipeline execution.
 
 ![](../../images/a/pipeline-initial.png)
 
@@ -146,15 +144,62 @@ Welcome! This is the SAP Cloud SDK pipeline in action. On top you see the graph 
 
 While the pipeline executes, let's get a better understanding of what's going on. The automated pipeline is our primary tool facilitate a quick flow of work from commit to production - because only productively deployed code is good code. Sounds risky? That's why it also acts as a quick feedback giver - because we only want well-working code to be deployed to production.
 
-So, what does the pipeline particularly do?
-* **Init**: Everything starts with the `Init` stage where the pipeline machinary gets ready. In the `Init` stage
+## Structure of the SAP Cloud SDK Continuous Delivery Pipeline
+So, what does the SAP Cloud SDK pipeline particularly do?
 
-* <br>
+* **Bootstrapping:** The SAP Cloud SDK pipeline is fully codified (Pipeline-as-Code). That means that we already did all the hard work for you and you can start using it without writing a single line of code. If you look cloesely, you will find a file called `Jenkinsfile` in the root of your project. This file loads the SAP Cloud SDK pipeline definition from the open source repository on https://github.com/SAP/cloud-s4-sdk-pipeline and starts executing it.
+
+> Note: By setting the property `pipelineVersion` to a specific release of the pipeline, you can fix the pipeline to a specific version. This is recommended for productive projects. Conducting a pipeline update to the most recent release is then just a matter of changing the value of `pipelineVersion`, ideally verified via a pull request.
+
+* **Init:** Once the pipeline defintion is locaded, it runs its `Init` stage. Here, the pipeline loads your project-specific configuration from `pipeline_config.yml` and checks out the source code of your project.
+
+* **Build:** This stage builds the deployable artifact of the application. Since the timesheet application is a SAP Cloud Programming Model based application, this will be an mtar file for us.
+
+> Note: The SAP Cloud SDK pipeline implements the *build-once principle*, i.e., the artifact is used in all follow-up stages without rebuilding (parts of) it. This saves precious time and increases the reliability of the pipeline.  
+
+* **Local Tests:** The local test group executes a family of checks that can be run locally without deploying the application to SAP Cloud Platform. The individual stages are executed in parallel.
+    * **Backend Unit- and Integration Tests:** These two stages run backend tests and collect code coverage information.
+    * **Frontend Unit- and Integration Tests:** If your project has a frontend, these two stages execute the corresponding unit and integration tests. As you see, no one yet wrote frontend tests for the timesheet application - we should definitely address this in the near future to make sure that we get quickly receive feedback on the functional correctness of frontend components.
+    * **Lint:** If the pipeline detects a SAPUI5 frontend in your application, it will automatically execute the SAPUI5 best practice linter. You can use the results to improve your code. If you want, you can also let the pipeline fail based on custom thresholds to enforce quality.
+    * **NPM Dependency Audit:** If your project contains JavaScript modules, the pipeline will automatically execute `npm audit` to check whether your project uses vulnerable dependencies. If this is the case, it will let the pipeline fail. You can audit findings and whitelist dependencies via `pipeline_config.yml` if they turn out to be uncritical for you.
+    * **Static Code Checks:** The pipeline automatically executes a set of best-practice static code checks. This comprises general coding practices and checks that are specific to the proper use of the SAP Cloud SDK.
+* **Remote Tests**: The remote test groups executes checks that require the deployment of the application. The individual stages are executed in parallel. The timesheet app does not have any remote tests yet, therefore this group is skipped by the pipeline.
+    * **End-to-end Tests:** Using a simulated browser environment, end-to-end tests ensure that user stories of the application behave as expected when the application is deployed to SAP Cloud Platform.
+    * **Performance Tests:** The SAP Cloud SDK SDK supports performance tests with Gatling and JMeter. If your project contains corresponding tests, they will be automatically executed by the pipeline.
+* **Quality Checks:** This stage collects telemetry data of unit and integration tests and assures that your application does not violate relevant cloud qualities. It assures that you integrate other services in a resilient manner and that only whitelisted services are consumed from SAP S/4HANA ERP systems. In order to ensure that ensure that enough telemetry data was collected, it also enforces a minimum code coverage threshold.
+* **Third-party Checks:** If your company holds a license of *Checkmarx*, *Fortify*, *SourceClear*, *WhiteSource*, you can easily integrate those commercial code scanners into the SAP Cloud SDK pipeline. They will be executed in parallel as part of the Third-party Checks stage. Since such scans tend to run longer, this group is only executed for the productive branch (usually `master`).
+* **Artifact Deployment:** If the pipeline runs on the productive branch and all checks succeeded, the artifact can at this point in time be deployed to a artifact repository. This helps you to keep an auditable trail of deployed versions. We don't have a repository configured, therefore, this stage will be skipped.
+* **Production Deployment:** If everything went well and the pipeline runs on the productive branch, the application will finally be deployed to the SAP Cloud Platform spaces defined in `pipeline_config.yml`.
+
+## Inspecting The Build Result
+
+After our quick excursion on the pipeline structure, let's check the result of pipeline run:
 ![](../../images/a/pipeline-failure.png)
 
+Oh no! Something went wrong. Obviously the quality checks stage discovered a problem. Let's have a closer look into the logs by scrolling down until we see the error messages. 
 
+![](../../images/a/pipeline-failure-msg.png)
 
+The output tells us that our Timesheet application accessed the SAP S/4HANA `EmployeeTime` service in a non-resilient manner. This means that issues during the invocation, e.g., a high network latency or unexpected issues on SAP S/4HANA-side, could cascade to the timesheet application and ,therefore, negatively affect the user experience of multiple end users or even tenants. By properly designing distributed applications such as the timesheet application, this can be easily avoided.
 
+Let's have a look into the code to fix the issue. Open IntelliJ and locate the implementation of the Team Calendar Service (`srv/src/main/java/my/timeheethandson/TeamCalendarService`).
+
+![](../../images/a/teamcalendar-file.png)
+
+Feel free to have a look at the code and understand what's going on. Do you get a first feeling of what might be wrong?
+
+Let's look closer at the code that reads existing entries from SAP S/4HANA and SAP SuccessFactors.
+
+```
+// Read SAP S/4HANA appointments
+        final CompletableFuture<List<EntityData>> futureS4Appointments = CompletableFuture.supplyAsync(
+                ResilienceDecorator.decorateSupplier(
+                        () -> readS4Appointments(persons, year),
+                        ResilienceConfiguration.of(WorkforceTimesheetService.class)));
+
+        // Read SFSF appointments
+        final List<EntityData> sfsfAppointments = readSfsfAppointments(persons, year);
+```
 
 
 [![](../../images/nav-previous.png) Previous Exercise](../A1/README.md) ｜[![](../../images/nav-home.png) Overview page](../../README.md) ｜ [![](../../images/nav-next.png) Next Exercise](../../overviews/B/README.md)
