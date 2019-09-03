@@ -47,7 +47,7 @@ This exercise consists of couple of steps.
 ![](../../images/b/b1_7_open_ans.png)
 
 5. Open the Subscriptions section and click the **Create** button
-![](../../images/b/b1_9_create_sub.png)
+![](../../images/b/b1_9_create.png)
 
 6. In the pop-up screen Fill the subscription name to be **ApplicationStateChanged< The last threedigits of your username >**. For example AppHasStopped000. **You can set any other name, that you like**. Then Click on the **Create** button.
 ![](../../images/b/b1_12_create_sub.png)
