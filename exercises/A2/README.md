@@ -188,18 +188,102 @@ Let's have a look into the code to fix the issue. Open IntelliJ and locate the i
 
 Feel free to have a look at the code and understand what's going on. Do you get a first feeling of what might be wrong?
 
-Let's look closer at the code that reads existing entries from SAP S/4HANA and SAP SuccessFactors.
+Let's look closer at the code that reads existing entries from SAP S/4HANA and SAP SuccessFactors (starting in line 52).
 
-```
+```java
 // Read SAP S/4HANA appointments
-        final CompletableFuture<List<EntityData>> futureS4Appointments = CompletableFuture.supplyAsync(
-                ResilienceDecorator.decorateSupplier(
-                        () -> readS4Appointments(persons, year),
-                        ResilienceConfiguration.of(WorkforceTimesheetService.class)));
+List<EntityData> s4Appointments;
+try {
+    s4Appointments = ResilienceDecorator.executeCallable(
+        () -> readS4Appointments(persons, year),
+        ResilienceConfiguration.of(WorkforceTimesheetService.class)
+    );
+} catch (Exception ex) {
+    [...]
+}
 
-        // Read SFSF appointments
-        final List<EntityData> sfsfAppointments = readSfsfAppointments(persons, year);
+// Read SFSF appointments
+List<EntityData> sfsfAppointments;
+try {
+    sfsfAppointments = readSfsfAppointments(persons, year);
+} catch (Exception ex) {
+    [...]
+}
 ```
 
+As you can see, the code that accesses SAP S/4HANA is wrapped by the `ResilienceDecorator` of the SAP Cloud SDK. However, this does not apply to the code that accesses SAP SuccessFactors - that's a violation of cloud qualities in the Timesheet application.
+
+Let's fix the design flaw, by applying the same pattern as for the SAP S/4HANA integration code:
+
+```java
+// Read SFSF appointments
+List<EntityData> sfsfAppointments;
+try {
+    sfsfAppointments = ResilienceDecorator.executeCallable(
+        () -> readSfsfAppointments(persons, year),
+        ResilienceConfiguration.of(EmployeeTimeService.class)
+    );
+} catch (Exception ex) {
+    [...]
+}
+```
+After adapting the code in IntelliJ, save the file, commit, and finally push it with the known procedure.
+* Navigate to `Version Control > Local Changes` and then click on the green checkmark button to commit your changes.<br>
+![](../../images/a/commit-resilience.png)
+* In the new `Commit Changes` screen, review your changes, click on the the dropdown arrow of the `Commit` button, and finally click `Commit and Push`.<br>
+![](../../images/a/push-resilience.png)
+
+## Trigger a New Pipeline Run
+
+Now its time to check whether our changes successfully fixed the issue:
+* Re-open the Chrome browser
+* Navigate to Blue Ocean
+* Open the timesheet job and navigate to the branches (shortcut: http://localhost:8080/blue/organizations/jenkins/timesheet/branches/).
+* Click on the `Run` button to trigger a new build of your branch.<br>
+![](../../images/a/rerun-pipeline.png)
+
+> Note: In productive setups, we would usually setup a webhook from our source code management system to Jenkins to trigger builds automatically whenever changes are pushed to git. For the sake of simplicity, we skipped this automation in our hands-on session.
+
+* Click on the freshly started pipeline run to get to the pipeline progress screen we saw earlier.<br>
+![](../../images/a/open-build.png)
+
+This time, all checks should succceed and pipeline should finally perform a production deployment into your personal Cloud Foundry space.
+
+![](../../images/a/deployment-successful.png)
+
+## Open the Freshly Deployed Application
+
+To view your space on SAP Cloud Platform, you can use the following deep link:
+https://account.hana.ondemand.com/cockpit/#/globalaccount/b579d51f-44f7-4a0a-915d-83abd236f86d/subaccount/e44933a6-9b18-4072-8d54-bde63886af30/spaces
+
+Alternatively, follow the following steps:
+* Open https://account.hana.ondemand.com
+* Click on the `Teched2019` global account tile
+* Click on the `CAA381cf` subaccount tile
+* In the menu on the left, click on the `Spaces` item
+
+When you arrived at the spaces overview, click on the `CAA381-participantId` space tile.
+
+You should now see the list of running applications which should look similar to the following screenshot. Click on the started application instance to get to the details.
+![](../../images/a/applications.png)
+
+Now, click on the link in the routes tile. This will open your freshly deployed application.
+![](../../images/a/routes.png)
+
+Congratulations, the timesheet app is now resilient and succesfully shows data from SAP SuccessFactors and SAP S/4HANA.
+
+![](../../images/a/timesheet-app.png)
+
+
+## Summary
+
+At the end of this lesson, let's quickly recap what we learned so far:
+* We learned how easy it is to setup a Continuous Delivery infrastructure with the help of Piper's `cx-server` script
+* We understood the concept and value of ready-made pipelines
+* We created our own declarative pipeline configuration for our Timesheet application and created a build job that executes the pipeline for our Timesheet project
+* We learned which qualitites the SAP Cloud SDK pipeline assures for us and discovered that our application is not implemented in a resilient manner.
+* After fixing the issue, we ran the pipeline again and successfully deployed our Timesheet application to production.
+
+So far so good, SAP tools help to build and deliver high-quality applications efficiently. But what happens afterwards? How can we efficiently automate the operation of our app? That's what you will learn in Lesson B of this hands-on session. Have fun!
 
 [![](../../images/nav-previous.png) Previous Exercise](../A1/README.md) ｜[![](../../images/nav-home.png) Overview page](../../README.md) ｜ [![](../../images/nav-next.png) Next Exercise](../../overviews/B/README.md)
