@@ -26,4 +26,4 @@ Alert Notification is an SAP Cloud Platform-based service which provides you wit
 * Exercise B2 - [Configure Custom Alerts](../../exercises/B2/README.md)
 
 
-[[![](../../images/nav-home.png) Overview page](../../README.md) ｜ [![](../../images/nav-next.png) Start Exercise](../../exercises/B1/README.md)]
+[[![](../../images/nav-previous.png) Previous Exercise](../../README.md) ｜[![](../../images/nav-home.png) Overview page](../../README.md) ｜ [![](../../images/nav-next.png) Start Exercise](../../exercises/B1/README.md)]
