@@ -51,4 +51,4 @@ Success! You are now ready to continue with lesson A.
 ![](../images/a/push-success.png)
 
 
-[[![](../images/nav-home.png) Overview page](../README.md) ｜ [![](../images/nav-next.png) Start Exercise](../overviews/A/README.md)]
+[![](../images/nav-home.png) Overview page](../README.md) ｜ [![](../images/nav-next.png) Start Exercise](../overviews/A/README.md)
