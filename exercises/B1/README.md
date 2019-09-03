@@ -106,12 +106,17 @@ Now, once we are ready with our configuration all that is left to see how it wor
 ![](../../images/b/b1_29_select_app.png)
 4. Click the Stop button of your application
 ![](../../images/b/b1_30_stop_app.png)
-5. Open your (https://caa381.slack.com)[Slack Channel]. Authenticate with the provided email and password on the paper on your desk.
+5. Open your [Slack Channel](https://caa381.slack.com). Authenticate with the provided email and password on the paper on your desk.
 ![](../../images/b/b1_31_open_slack.png)
 5. On the left-hand side you will see the Slack Channels. Click on # caa381-2019
-6. In a second you should see the alert
-![](../../images/b/b1_31_message.png)
+6. If you are not the first who has posted an alert, you will see multiple alerts here. This is so, because everybody from this exercise posts alerts onto that channel. To find yours you should search the alert by your space name. To do so go back to **Cloud Cockpit** and in the browser URL locate the **space** guid. select the guid and copy it.
+![](../../images/b/b1_32_space_guid.png)
 
+7. Back in slack in the upper rightt corner you are going to find the **Search** field. Click on it and **paste** the space guid. Then hit eneter.
+![](../../images/b/b1_33_search_field.png)
+
+8. You should see the following result. And that is your alert. You can click on **view in channel** to see the alert into the slack channel itself.
+![](../../images/b/b1_34_search_result.png)
 
 
 [![](../../images/nav-previous.png) Previous Exercise](../A2/README.md) ｜[![](../../images/nav-home.png) Overview page](../../README.md) ｜ [![](../../images/nav-next.png) Next Exercise](../B2/README.md)
