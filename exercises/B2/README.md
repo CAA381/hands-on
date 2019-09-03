@@ -65,7 +65,7 @@ During exercise B1, we explored how we can create Subscriptions, Actions and Con
   ],
   "subscriptions": [
     {
-      "name": "<Your custom alert name>",
+      "name": "MyCustomAlert",
       "conditions": [
         "AlertIsException"
       ],
@@ -80,19 +80,16 @@ During exercise B1, we explored how we can create Subscriptions, Actions and Con
 }
 ```
 
-3. Paste the json into the **Import** field of the Alert Notification UI and **change** the name of the subsription from **\<Your custom alert name>** to **MyCustomAlertLastThreeDigitsOfYourUserName**.
 
-![](../../images/b/b1_2_change_name.png)
-
-4. Click on the **Import** button.
+3. Click on the **Import** button.
 
 ![](../../images/b/b2_3_click_import.png)
 
-5. This action will delete our previous configuration, so click on **OK**. 
+4. This action will delete our previous configuration, so click on **OK**. 
 
 ![](../../images/b/b2_4_click_ok.png)
 
-6. Alert import should be successfull
+5. Alert import should be successfull
 
 ![](../../images/b/b2_5_import_ok.png)
 
