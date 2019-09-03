@@ -40,7 +40,7 @@ During exercise B1, we explored how we can create Subscriptions, Actions and Con
 
 ![](../../images/b/b2_1_export_import.png)
 
-2. Now it is time to import our configuration. We have already defined the action (send us the alert to a Slack channel). What is left to do is to define a Subscription and a Condition that matches our alert. For that purpose copy the json configuration below. 
+2. Now it is time to import our configuration. We have already defined the action (send us the alert to a Slack channel). What is left to do is to define a Subscription and a Condition that matches our alert. For that purpose copy the json configuration below. **Paste this json into the Import section**
 ```javascript
 {
   "conditions": [
