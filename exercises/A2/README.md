@@ -291,6 +291,6 @@ At the end of this lesson, let's quickly recap what we learned so far:
 * We learned which qualitites the SAP Cloud SDK pipeline assures for us and discovered that our application is not implemented in a resilient manner.
 * After fixing the issue, we ran the pipeline again and successfully deployed our Timesheet application to production.
 
-So far so good, SAP tools help to build and deliver high-quality applications efficiently. But what happens afterwards? How can we efficiently automate the operation of our app? That's what you will learn in Lesson B of this hands-on session. Have fun!
+So far so good - SAP tools help to build and deliver high-quality applications efficiently. But what happens afterwards? How can we efficiently automate the operation of our app? That's what you will learn in Lesson B of this hands-on session. Have fun!
 
 [![](../../images/nav-previous.png) Previous Exercise](../A1/README.md) ｜[![](../../images/nav-home.png) Overview page](../../README.md) ｜ [![](../../images/nav-next.png) Next Exercise](../../overviews/B/README.md)
