@@ -57,7 +57,7 @@ This hands-on session is structured into two main chapters:
 # Preparation (Mandatory)
 Preparation is mandatory for both exercises. 
 
-![](images/nav-next.png) [Overview and Start](prep/README.md)
+![](images/nav-prepa.png) [Overview and Start](prep/README.md)
 
 ## Lesson A – Seting up Continuous Delivery for the Timesheet Application
 In lesson A, you will bring your application source code to life by deploying it to SAP Cloud Platform. You might be familiar with complex and slow release cycles in traditional software development. In this lesson, you will learn how you can deliver application changes to production within just a few minutes and without risking significant regressions for your customers. In particular, we will run through the following streamlined steps:
