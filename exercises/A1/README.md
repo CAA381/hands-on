@@ -84,4 +84,4 @@ After you see the success message that indicates that the Cx Server successfully
 Woohoo! Our Continuous Delivery server is running. Now we can look into setting up the pipeline for our project. 
 
 
-![](../../images/nav-home.png) [Overview page](../../README.md) ｜ [![](../../images/nav-next.png) Next Exercise](../A2/README.md)
+[![](../../images/nav-previous.png) Lesson Overview](../A2/README.md) | ![](../../images/nav-home.png) [Overview page](../../README.md) ｜ [Next Exercise ![](../../images/nav-next.png)](../A2/README.md)
