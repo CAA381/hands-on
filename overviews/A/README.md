@@ -25,4 +25,4 @@ Luckily, if you are building your application with the SAP Cloud Application Pro
 
 
 
-[![](../../images/nav-previous.png) Preparation](../../prep/README.md) ｜[![](../../images/nav-home.png) Overview page](../../README.md) ｜ [![](../../images/nav-next.png) Start Exercise](../../exercises/A1/README.md)
+[![](../../images/nav-previous.png) Preparation](../../prep/README.md) ｜[![](../../images/nav-home.png) Overview page](../../README.md) ｜ [Start Exercise ![](../../images/nav-next.png)](../../exercises/A1/README.md)
