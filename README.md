@@ -45,6 +45,7 @@ Everything has been already configured for you so that you can focus on the DevO
 This hands-on session is structured into two main chapters:
 
 1. **Delivering the Timesheet Application to SAP Cloud Platform:** We will learn how easy it is to establish a Continuous Delivery setup for our application, helping us to quickly deliver high-quality changes into the hands of our end users.
+
 2. **Observing the Timesheet Application:** After we deployed the app, we need to make sure that it runs smoothly and that we can quickly react to problems. We will learn how SAP Cloud Platform helps us to observe the state of our services and how we can be informed about interesting events.
 
 
