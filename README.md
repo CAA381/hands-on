@@ -9,7 +9,7 @@ During this session, we will interact with various tools and systems. The follow
 The used landscape consists of the following systems:
 
 * **Timesheet Application**\
-The Timesheet Application is the example app that we wil use throughout this hands-on session. Each participant will deploy and operate an own instance of this app on SAP Cloud Platform. The application illustrates a typical SAP Cloud Platform scenario: It realizes a custom business process for creating and approving timesheet entries. Technically, it is based on the [SAP Cloud Application Programming Model](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/00823f91779d4d42aa29a498e0535cdf.html) and the [SAP Cloud SDK](https://developers.sap.com/topics/cloud-sdk.html) which is used to integrate with SAP S/4HANA and SAP SuccessFactors. 
+The Timesheet Application is the example app that we will use throughout this hands-on session. Each participant will deploy and operate an own instance of this app on SAP Cloud Platform. The application illustrates a typical SAP Cloud Platform scenario: It implements a custom business process for creating and approving timesheet entries. Technically, it is based on the [SAP Cloud Application Programming Model](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/00823f91779d4d42aa29a498e0535cdf.html) and the [SAP Cloud SDK](https://developers.sap.com/topics/cloud-sdk.html) which is used to integrate with SAP S/4HANA and SAP SuccessFactors. 
 <br><img src="images/a/timesheet-app.png" width="60%" />
 
 * **IntelliJ IDEA**\
@@ -22,7 +22,7 @@ For central source code management, we will use GitLab. We use a shared source c
 Project Piper provides tools for the efficient implementation of Continuous Delivery in the SAP ecosystem. We will use the Piper Cx Server to create an own local Continuous Delivery server instance out-of-the-box. In this pre-configured environment, we will then execute the SAP Cloud SDK pipeline to run the build, tests, quality checks, and deployment of the Timesheet Application.
 
 * **MTA Deploy Service**\
-The Timesheet Application project  is built with the SAP Cloud Application Programming Model which uses the [Multitarget application (MTA)](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/c4f0d850b6ba46089a76d53ab805c9e6.html) tooling for packaging and deployment. Multitarget applications allow you handle applications that consits of one or more different components written in different languages as a single deployment unit. The [MTA Deploy Service](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.03/en-US/854a00eb1193486383fc4a97b998dabd.html) takes care to execute enterprise-grade deployments providing you features like blue-green deployment and many more. It also ensures that your application is properly connected to platform services based on codified requirements in your MTA deployment descriptor.
+The Timesheet Application project  is built with the SAP Cloud Application Programming Model which uses the [Multitarget application (MTA)](https://help.sap.com/viewer/b017fc4f944e4eb5b31501b3d1b6a1f0/Cloud/en-US/aa0e6f6c2a194a3ba5932b9cf4e78226.html) tooling for packaging and deployment. Multitarget applications allow you handle applications that consits of one or more different components written in different languages as a single deployment unit. The [MTA Deploy Service](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.03/en-US/854a00eb1193486383fc4a97b998dabd.html) takes care to execute enterprise-grade deployments providing you features like blue-green deployment and many more. It also ensures that your application is properly connected to platform services based on codified requirements in your MTA deployment descriptor.
 
 * **SAP Cloud Platform Cloud Foundry Space**\
 Every participant has access to a dedicated Cloud Foundry space which can be used with the provided username and password from the handouts on your desks. Furthermore, we will use the following services to observe and operate our application:
@@ -36,7 +36,7 @@ Every participant has access to a dedicated Cloud Foundry space which can be use
 * **Slack**\
 In this session, we will use Slack as the default channel for receiving alerts.
 
-Everything has been already configured for you so that you can focus on the DevOps topic. Nevertheless, here is a summary of the requirements that are needed if you want to set up the same landscape later on your own:
+Everything has been already configured for you, so that you can focus on the DevOps topic. Nevertheless, here is a summary of the requirements that are needed if you want to set up the same landscape later on your own:
 
 # Exercises
 
