@@ -1,16 +1,11 @@
 # Preparation
 
-# Brief Overview
-This preparation is **mandatory** for all exercises. During the preparation phase, we are going to set up our development environment and GitLab as well.
+This preparation is **mandatory** for all exercises. We will perform the following steps:
+* Start our local development environment
+* Check out the latest source code version of the Timesheet Application
+* Create personal development branch in the source code repository
 
-## Estimated Time: 15 minutes
-
-## What you will learn
- - How to connect your development environment to GitLab.
- - How to push a change into git.
- - How to consume alerts via different channels, like mail and Slack.
-
-## Exercise Description 
+## Estimated Time: 10 minutes
 
 ## Start IntelliJ IDE
 Before we get started with real work, we need to prepare our work environment. In this session, we will use IntelliJ as our IDE. To start IntelliJ, please navigate to `D:\Files\Session\CAA381` and click on the IntelliJ shortcut.
@@ -34,7 +29,7 @@ Now, let's create our personal branch for our source code changes. On the bottom
 
 In the next dialogue, enter your ***personal participant id*** which has been handed out to you and click on `OK`.
 
-![](../images/a/branch-name.png)
+![](../images/a/gitbranch-name.png)
 
     > TODO Check if MTA.YAML needs to be customized. If not, remove "participantId" from mta.yaml.
 
