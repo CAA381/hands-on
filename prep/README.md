@@ -46,4 +46,4 @@ Success! You are now ready to continue with lesson A.
 ![](../images/a/push-success.png)
 
 
-[![](../images/nav-home.png) Overview page](../README.md) ｜ (../overviews/A/README.md) [![](../images/nav-next.png) Start Lesson A]
+[![](../images/nav-home.png) Overview page](../README.md) ｜  [Start Lesson A ![](../images/nav-next.png)](../overviews/A/README.md)
