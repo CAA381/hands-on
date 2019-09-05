@@ -28,7 +28,7 @@ The Timesheet Application project  is built with the SAP Cloud Application Progr
 Every participant has access to a dedicated Cloud Foundry space which can be used with the provided username and password from the handouts on your desks. Furthermore, we will use the following services to observe and operate our application:
 
    * **Cloud Controller**\
-   Maintaining a database with tables for organizations, spaces, services, user roles, and more. Via it, we can understand what the current state of our application is (is it running, is it stopped, is it crashed, etc.)
+   The Cloud Controller maintains the state of every application running on SAP Cloud Platform. It knows whether the application is started, stopped, crashed or in some other state.
    
    * **SAP Cloud Platform Alert Notification**\
    We are going to use this service to define events (alerts) that can occur with our application (or its dependencies). Once these events occur, the Alert Notification will notify us via various channels. In this hands-on session, we will use it for alerts that notify us about the un-availability of our application services.
