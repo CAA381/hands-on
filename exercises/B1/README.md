@@ -101,14 +101,14 @@ your alerts. To integrate Alert Notification with Slack, one would need a [webho
 ## 2. Stop your application and Receive alerts
 
 Now, once we are ready with our configuration, all that is left to see how it works. For that purpose, execute the following steps:
-1. Open Slack by clicking here. Authenticate with the provided email and password on your hands-on sheets.
-2. In the Cloud Cockpit click on your space name and then select the Applications section
+
+1. In the Cloud Cockpit click on your space name and then select the Applications section
 ![](../../images/b/b1_28_open_apps.png)
-3. Select your running application
+2. Select your running application
 ![](../../images/b/b1_29_select_app.png)
-4. Click the Stop button of your application
+3. Click the Stop button of your application
 ![](../../images/b/b1_30_stop_app.png)
-5. Open your [Slack Channel](https://caa381.slack.com). Authenticate with the provided email and password on the paper on your desk.
+4. Open your [Slack Channel](https://caa381.slack.com). Authenticate with the provided email and password on the paper on your desk.
 ![](../../images/b/b1_31_open_slack.png)
 5. On the left-hand side, you will see the Slack Channels. Click on # caa381-2019
 6. If you are not the first who has posted an alert, you will see multiple alerts here. This is so because everybody from this exercise posts alerts onto that channel. To find yours you should search the alert by your space name. To do so go back to **Cloud Cockpit** and in the browser URL locate the **space** guid. Select the guid and copy it.
