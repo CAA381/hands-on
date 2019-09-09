@@ -57,6 +57,7 @@ This exercise consists of a couple of steps.
 ![](../../images/b/b1_12_create_cond.png)
 
 8. Now it is time to create our condition, against which the alert is going to match.
+
    1. Give the condition some meaningful name. For example **ApplicationStateHasBeenUpdated**
    2. Under Labels fill **AppStates** and hit enter or tab 
    > If you have a lot of subscriptions and conditions, the labels help you filter later on. 
