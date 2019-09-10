@@ -36,8 +36,8 @@ During exercise B1, we explored how we can create Subscriptions, Actions and Con
 
 **If in the previour exercise you have chosen to use your email instead of Slack channel, please call the session facilitator to help you with handling your configuration.**
 
-1. Let's start by opening the Export/Import screen of Alert Notification. To do so in Cloud Cockpit - Alert Notification UI click on **Export and Import**
-
+1. Let's start by opening the Export/Import screen of Alert Notification. To do so in Cloud Cockpit in your space navigat to *Service Instance* select the alert-notification-instance<X> and click on the **Export and Import** menu.
+	
 ![](../../images/b/b2_1_export_import.png)
 
 2. Now it is time to import our configuration. We have already defined the action (send us the alert to a Slack channel). What is left to do is to define a Subscription and a Condition that matches our alert. For that purpose copy the json configuration below. **Paste this json into the Import section**
