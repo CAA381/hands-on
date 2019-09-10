@@ -101,7 +101,7 @@ your alerts. To integrate Alert Notification with Slack, one would need a [webho
 
 ## 2. Stop your application and Receive alerts
 
-Now, once we are ready with our configuration, all that is left to see how it works. For that purpose, execute the following steps:
+Now, once we are ready with our configuration. All that is left to see how it works. For that purpose, execute the following steps:
 
 1. In the Cloud Cockpit click on your space name and then select the Applications section
 ![](../../images/b/b1_28_open_apps.png)
