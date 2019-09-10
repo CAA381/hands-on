@@ -47,7 +47,9 @@ This exercise consists of a couple of steps.
 ![](../../images/b/b1_7_open_ans.png)
 
 5. Open the Subscriptions section and click the **Create** button
-> Subsbcriptions are the main entity of SAP Cloud Platform Alert Notifications. Those are the configuration that we should create in order to subscribe oursleves for an alerrt.
+
+> Subsbcriptions are the main entity of SAP Cloud Platform Alert Notifications. Those are the configuration that we should create in order to subscribe oursleves for an alert.
+
 ![](../../images/b/b1_9_create.png)
 
 6. In the pop-up screen fill the condition name to be **ApplicationStateChanged< The last three digits of your username >**. For example, AppHasStopped000. **You can set any other name, that you like**. Then click on the **Create** button.
