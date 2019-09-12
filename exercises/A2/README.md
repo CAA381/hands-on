@@ -147,7 +147,7 @@ Welcome! This is the SAP Cloud SDK pipeline in action. On top you see the graph 
 
 ![](../../images/a/pipeline-initial.png)
 
-> Note: Your first build run will usually take quite some time because the pipeline needs to fetch many project dependencies from the internet. Fortunately, thanks to the smart and transparent download cache, follow-up builds will run significantly faster because dependencies will then be resolved locally.
+> Note: Your first build run can take up to 10 minutes time because the pipeline needs to fetch many project dependencies from the internet. Fortunately, thanks to the smart and transparent download cache, follow-up builds will run significantly faster because dependencies will then be resolved locally.
 
 While the pipeline executes, let's get a better understanding of what's going on. The automated pipeline is our primary tool facilitate a quick flow of work from commit to production - because only productively deployed code is good code. Sounds risky? That's why it also acts as a quick feedback giver - because we only want well-working code to be deployed to production.
 
@@ -255,6 +255,8 @@ Now its time to check whether our changes successfully fixed the issue:
 ![](../../images/a/open-build.png)
 
 This time, all checks should succceed and pipeline should finally perform a production deployment into your personal Cloud Foundry space.
+
+> Note: Since we are using limited hardware and a shared internet connection, the pipeline run can take more than 10 minutes.
 
 ![](../../images/a/deployment-successful.png)
 
