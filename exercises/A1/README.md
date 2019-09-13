@@ -16,13 +16,16 @@ Software does not generate value before hasn't reached the hands of end users. I
 ## Start Cx Server
 Let's get our hands dirty and start the Continuous Delivery server on our local machine. All we need is internet access, Docker, and the `cx-server` lifecycle management script. With this script, we can conduct operations such as starting, stopping, and updating our server.
 
-For your convinience, the `cx-server` script is alrady included in the Timesheet Application. From `D:\Files\Session\CAA381\caa381` navigate into the `cx-server` sub-folder. 
+For your convinience, the `cx-server` script is already included in the Timesheet Application.
 
-> `D:\Files\Session\CAA381\caa381>cd cx-server`
+![](../../images/a/cx-server-project.png)
 
-Now, let's execute `cx-server start` to start your personal Continuous Delivery server instance.
+On the bottom left, IntelliJ offers us an integrated Terminal window. To start the Cx Server, follow the following steps:
+* Click on `Terminal` to switch to the Terminal. The prompt should now show a prompt in `D:\Files\Session\CAA381\caa381`
+* Execute `cd cx-server` to switch into the `cx-server` sub-folder
+* Execute `cx-server start` to start the Cx Server
 
-> `D:\Files\Session\CAA381\caa381\cx-server>cx-server start`
+![](../../images/a/cx-server-start.png)
 
 Docker might prompt you now to share your `D:` Drive. Click on `Share it` and enjoy the show.
 
