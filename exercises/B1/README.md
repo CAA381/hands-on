@@ -81,12 +81,10 @@ This exercise consists of a couple of steps.
 
 11. In the next screen select **Slack**. Slack is a cloud-based set of proprietary team collaboration software tools and online services. With Slack, you can manage different channels of communication, including automatic messaging.
     1. Click on the Slack radio button
-    
-    ![](../../images/b/b1_17_select_slack.png)
-    
     2. Click Next
     
-   ![](../../images/b/b1_19_assign_action.png)
+    ![](../../images/b/b1_17_select_slack.png)
+       
 
 12. Copy this link **https://hooks.slack.com/services/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**
     1. In the name field type **PostToMySlackChannel**
@@ -103,6 +101,7 @@ your alerts. To integrate Alert Notification with Slack, one would need a [webho
 
 14. On the next screen review and click **Assign**. Note that this is a **demo account**, however, in a productive environment you will have to make opt-in from Slack and confirm from within Slack
 
+![](../../images/b/b1_19_assign_action.png)
 
 15. Review the final summary and click **Close**
 ![](../../images/b/b1_20_summary.png)
