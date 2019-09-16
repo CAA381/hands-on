@@ -53,6 +53,9 @@ This exercise consists of a couple of steps.
 ![](../../images/b/b1_9_create.png)
 
 6. In the pop-up screen fill the condition name to be **ApplicationStateChanged< The last three digits of your username >**. For example, AppHasStopped000. **You can set any other name, that you like**. Then click on the **Create** button.
+
+> If you have a lot of subscriptions and conditions, the labels help you filter later on. 
+
 ![](../../images/b/b1_12_create_sub.png)
 
 7. Click on **Create Condition**
@@ -63,7 +66,6 @@ This exercise consists of a couple of steps.
 
    1. Give the condition some meaningful name. For example **ApplicationStateHasBeenUpdated**
    2. Under Labels fill **AppStates** and hit enter or tab 
-   > If you have a lot of subscriptions and conditions, the labels help you filter later on. 
    3. Under Condition select **eventType** 
    > Every alert coming from Alert Notification has the same model. It has eventType, subject, body and more fields. Alert Notification exposes a catalogue for alerts provided from the platform. In that catalogue you can see what the different values for certain field of an alert are. In our case [this is the catalogue entry](https://help.sap.com/viewer/5967a369d4b74f7a9c2b91f5df8e6ab6/Cloud/en-US/4255e6064ea44f20a540c5ae0804500d.html) that we are interested in.
    4. From the dropdown select **Is Equal To**
@@ -83,7 +85,6 @@ This exercise consists of a couple of steps.
    ![](../../images/b/b1_17_select_slack.png)
 
 12.Copy this link **https://hooks.slack.com/services/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**
-
       1. In the name field type **PostToMySlackChannel**
       2. In Labels type **AppStates** and click tab or enter
       3. Make sure that State is **ON**
