@@ -81,6 +81,9 @@ This exercise consists of a couple of steps.
 
 11. In the next screen select **Slack**. Slack is a cloud-based set of proprietary team collaboration software tools and online services. With Slack, you can manage different channels of communication, including automatic messaging.
     1. Click on the Slack radio button
+    
+    ![](../../images/b/b1_17_select_slack.png)
+    
     2. Click Next
     
    ![](../../images/b/b1_19_assign_action.png)
