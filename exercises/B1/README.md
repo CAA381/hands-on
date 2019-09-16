@@ -82,7 +82,7 @@ This exercise consists of a couple of steps.
 11. In the next screen select **Slack**. Slack is a cloud-based set of proprietary team collaboration software tools and online services. With Slack, you can manage different channels of communication, including automatic messaging.
    1. Click on the Slack radio button
    2. click Next
-   ![](../../images/b/b1_17_select_slack.png)
+   ![](../../images/b/b1_19_assign_action.png)
 
 12.Copy this link **https://hooks.slack.com/services/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**
       1. In the name field type **PostToMySlackChannel**
@@ -98,7 +98,7 @@ This exercise consists of a couple of steps.
 your alerts. To integrate Alert Notification with Slack, one would need a [webhook](https://en.wikipedia.org/wiki/Webhook). In order not to bother you with Slack configurations we have pre-configured those webhooks for you. However, if you want to learn more about how to configure Slack, click [here](https://help.sap.com/viewer/5967a369d4b74f7a9c2b91f5df8e6ab6/Cloud/en-US/88a4774f9d3f43259b4dc9e7e7729829.html?q=slack)
 
 13. On the next screen review and click **Assign**. Note that this is a **demo account**, however, in a productive environment you will have to make opt-in from Slack and confirm from within Slack
-![](../../images/b/b1_19_assign_action.png)
+
 
 14. Review the final summary and click **Close**
 ![](../../images/b/b1_20_summary.png)
