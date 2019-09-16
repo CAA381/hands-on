@@ -80,6 +80,7 @@ During exercise B1, we explored how we can create Subscriptions, Actions and Con
 }
 ```
 
+> If you look into the configuration you are going to see that the condition matches the field **eventType** with value **ANY** this means that any alerts that Alert Notification receives is going to be forwarded to us. This can be fine tuned by comparing different fields of a subscription witht values. We can also have multiple values compared with AND or OR conditions.
 
 3. Click on the **Import** button.
 
