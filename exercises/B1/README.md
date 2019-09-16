@@ -84,12 +84,12 @@ This exercise consists of a couple of steps.
    2. click Next
    ![](../../images/b/b1_19_assign_action.png)
 
-12.Copy this link **https://hooks.slack.com/services/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**
-      1. In the name field type **PostToMySlackChannel**
-      2. In Labels type **AppStates** and click tab or enter
-      3. Make sure that State is **ON**
-      4. Click on **Create** button
-      5. In **URL Address** paste the copied URL
+12. Copy this link **https://hooks.slack.com/services/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**
+    1. In the name field type **PostToMySlackChannel**
+    2. In Labels type **AppStates** and click tab or enter
+    3. Make sure that State is **ON**
+    4. Click on **Create** button
+    5. In **URL Address** paste the copied URL
       
 ![](../../images/b/b1_18_configure_web_hook.png)
 
