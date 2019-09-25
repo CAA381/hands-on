@@ -31,6 +31,7 @@ In the next dialogue, enter your ***personal participant id*** which has been ha
 
 ![](../images/a/gitbranch-name.png)
 
+
 Finally, we can push our branch to the central source code repository. In the top menu, click on `VCS > Git > Push`.
 
 ![](../images/a/push-branch.png)
@@ -44,4 +45,4 @@ Success! You are now ready to continue with lesson A.
 ![](../images/a/push-success.png)
 
 
-[![](../images/nav-home.png) Overview page](../README.md) ｜ [![](../images/nav-next.png) Start Exercise](../overviews/A/README.md)
+[![](../images/nav-home.png) Overview page](../README.md) ｜  [Start Lesson A ![](../images/nav-next.png)](../overviews/A/README.md)

@@ -1,13 +1,13 @@
 # Lesson B – Observability and Control of your application
-# Exercise B1 -  Configure Custom Alerts
+# Exercise B2 -  Configure Custom Alerts
 
 ## Objective
 You already know how to use the catalogue of alerts of Alert Notification. This catalogue is growing, and in time, you are going to have access to more and more alerts from different SAP Cloud Platform services.
-However, thee are some alerts that cannot be into the catalogue but are quite important. 
+However, there are some alerts that cannot be into the catalogue but are quite important. 
 
 Let's put ourselves in the shoes of a developer. Our cloud application is a complex beast; besides all the dependencies and services that it uses it has also quite a decent amount of code. Into that code, exceptional situations always occur. For example, some of the dependencies we have started returning unknown to us values, and our code does not know what to do. In such kinds of situations, typically a developer would throw an exception. And most probably an operator would like to know that there was such an exceptional situation.
 
-This is where the custom alerts come in play. Alert Notification exposes a REST API **everyone** can post an alert. This means whenever you have an exceptional situation in your application, you can call this REST API and it will post an alert for you. See the picture below for reference.
+This is where the custom alerts come in play. Alert Notification exposes a REST API and **everyone** can post an alert. This means whenever you have an exceptional situation in your application, you can call this REST API and it will post an alert for you. See the picture below for reference.
 
 ![](../../images/b/b1_2_custom.png)
 
@@ -36,8 +36,8 @@ During exercise B1, we explored how we can create Subscriptions, Actions and Con
 
 **If in the previour exercise you have chosen to use your email instead of Slack channel, please call the session facilitator to help you with handling your configuration.**
 
-1. Let's start by opening the Export/Import screen of Alert Notification. To do so in Cloud Cockpit - Alert Notification UI click on **Export and Import**
-
+1. Let's start by opening the Export/Import screen of Alert Notification. To do so in Cloud Cockpit in your space navigat to *Service Instance* select the alert-notification-instance<X> and click on the **Export and Import** menu.
+	
 ![](../../images/b/b2_1_export_import.png)
 
 2. Now it is time to import our configuration. We have already defined the action (send us the alert to a Slack channel). What is left to do is to define a Subscription and a Condition that matches our alert. For that purpose copy the json configuration below. **Paste this json into the Import section**
@@ -80,6 +80,7 @@ During exercise B1, we explored how we can create Subscriptions, Actions and Con
 }
 ```
 
+> If you look into the configuration you are going to see that the condition matches the field **eventType** with value **ANY** this means that any alerts that Alert Notification receives is going to be forwarded to us. This can be fine tuned by comparing different fields of a subscription witht values. We can also have multiple values compared with AND or OR conditions.
 
 3. Click on the **Import** button.
 
@@ -92,8 +93,6 @@ During exercise B1, we explored how we can create Subscriptions, Actions and Con
 5. Alert import should be successfull
 
 ![](../../images/b/b2_5_import_ok.png)
-
-> Note that if you see the message **Failed to import subscription**, you most probably have missed changing the name of your subscription in point 3.
 
 6. Navigate to the subscriptions screen and verify that this is what you see
 
