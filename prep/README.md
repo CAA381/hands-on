@@ -31,7 +31,6 @@ In the next dialogue, enter your ***personal participant id*** which has been ha
 
 ![](../images/a/gitbranch-name.png)
 
-    > TODO Check if MTA.YAML needs to be customized. If not, remove "participantId" from mta.yaml.
 
 Finally, we can push our branch to the central source code repository. In the top menu, click on `VCS > Git > Push`.
 
