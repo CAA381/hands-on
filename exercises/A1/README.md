@@ -25,9 +25,12 @@ On the bottom left, IntelliJ offers us an integrated Terminal window. To start t
 * Execute `cd cx-server` to switch into the `cx-server` sub-folder
 * Execute `cx-server start` to start the Cx Server
 
-![](../../images/a/cx-server-start.png)
+![](../../images/a/cx-server.png)
 
-Docker might prompt you now to share your `D:` Drive. Click on `Share it` and enjoy the show.
+Docker might prompt you now to share your `D:` Drive. Click on `Share it`.
+
+Careful! Now, Docker might have opened a `File Sharing` dialog asking for the credentials of the current user.
+The password in the Teched environment is `Welcome19`.
 
 ![](../../images/a/share-drive.png)
 
