@@ -83,7 +83,7 @@ ca7d0fcab266b2f7ade23455a580780bf1e216756706b7b80f116727299568be
 Waiting for the Cx server to start..... success.
 ```
 
-After you see the success message that indicates that the Cx Server successfully started, open Google Chrome and navigate to `localhost:8080` to open the user interface. 
+After you see the success message that indicates that the Cx Server successfully started, open Google Chrome and navigate to http://localhost:8080 to open the user interface. 
 
 ![](../../images/a/jenkins-welcome.png)
 
